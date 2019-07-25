@@ -1,0 +1,74 @@
+/* ------------------------------------------------- General */
+.background {
+    background-color: #eeeeee;
+    height: 100%;
+    width: 100%;
+    }
+
+html {
+    color: ##47525E;
+    }
+
+h1 {
+    margin-top: 0rem;
+    padding-left: 1rem;
+    }
+
+.waves-effect.waves-orange {
+    background-color: #FF9052;
+    }
+.waves-effect.waves-red {
+    background-color: #EF6666;
+    }
+
+a.btn {
+    color: white;
+    }
+
+.material-icons.gold-star {
+    color: #FFD700
+    }
+
+.material-icons.black {
+    color: #000000;
+    }
+
+/* ------------------------------------------------- Navigation */
+nav {
+    margin-bottom: 0px;
+    background-color: #CDE8D9;
+    height: 80px;
+    line-height: 80px;
+    font-size: 1.5rem;
+    }
+
+nav ul a {
+    font-size: 1.5rem;
+    color: #47525E;
+    }
+
+img.brand {
+    width: 10.8rem;
+    }
+
+/* ------------------------------------------------- Logo */
+img#logo-login {
+    width: 25rem;
+    }
+
+/* ------------------------------------------------- Cards */
+.recipe_details {
+    display: inline-block;
+    }
+
+p>.detail_link a {
+    color: #FF9052;
+    }
+
+img.recipe_image {
+    width: 18rem;
+    }
+
+.card-panel: {
+    margin-top: 0rem;
+    }

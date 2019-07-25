@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="The Monkees fan and booking website">
+    <meta name="keywords" content="The Monkees">
+    <meta name="author" content="Anthony Nicklin">
+    <meta name="veiwpoint" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <!--Fontawesome CDN-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!--GoogleFonts-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}">
+
+    <title>
+    {% if title %}
+      {{ title }} | Meat Free{% else %}Welcome to Meet Free
+    {% endif %}
+    </title>
+
+</head>
+
+
+<header>
+
+    <nav class="bg-green">
+        <div class="nav-wrapper">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li class="nav-item mx-2">
+                    <a href="{{ url_for('index') }}">Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--End of header and Navigation-->
+
+</header>
+
+<div class="background">
+    <div class="container">
+        <div class="row">
+            <div class="col s12">
+
+                <div class="center-align">
+                    <img id="logo-login" src="{{ url_for ('static', filename='images/meat_free_logo_grey.png') }}" alt="Meat Free Logo">
+                </div>
+
+                <div class="card-panel">
+
+                    <form action="{{ url_for('create_user') }}" method="POST">
+                        <h1 class="center-align">Sign Up</h1>
+                        <p class="center-align">Create an account so you can view and add amazing meat-free recipes!</p>
+
+                        <div class="row">
+                            <div class="form-group col s6">
+                                <label for="first-name">First Name</label>
+                                <input type="text" class="form-control" id="first-name" name="first-name" aria-describedby="firstName" placeholder="First Name">
+                            </div>
+                            <div class="form-group col s6">
+                                <label for="last-name">Last Name</label>
+                                <input type="text" class="form-control" id="last-name" name="last-name" aria-describedby="lastName" placeholder="Last Name">
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="form-group col s12">
+                                <label for="username">Username</label>
+                                <input type="text" class="form-control validate" id="username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="waves-effect waves-orange btn">Submit</button>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    </div>
+</div>
+
+</body>
+</html>
+
