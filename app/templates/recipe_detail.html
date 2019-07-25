@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="background">
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <div class="card-panel">
+
+            <br>
+            <h1 class="center-align">{{ recipe.name_of_recipe }}</h1>
+
+            <div class="row">
+                <div class="col s3 center-align">
+                    <p><b>Rating</b></p>
+                    <p><i class="material-icons gold-star">star</i><i class="material-icons gold-star">star</i></p>
+                </div>
+                <div class="col s3 offset-s6 center-align">
+                    <p><b>Upvotes</b></p>
+                    <p>{{ recipe.upvotes }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 center-align">
+                    {% if recipe.training_type == 'endurance' %}
+                        <img class="recipe_image" src="{{ url_for ('static', filename='images/beet.png') }}" alt="Beetroots">
+                        {% elif recipe.training_type == 'power' %}
+                        <img class="recipe_image" src="{{ url_for ('static', filename='images/avocado.png') }}" alt="Avocado">
+                        {% elif recipe.training_type == 'strength' %}
+                        <img class="recipe_image" src="{{ url_for ('static', filename='images/carrot.png') }}" alt="Carrot">
+                        {% else %}
+                        <img class="recipe_image" src="{{ url_for ('static', filename='images/garlic.png') }}" alt="Garlic">
+                    {% endif %}
+                </div>
+            </div>
+
+              <div class="row">
+                <div class="col s12 center-align">
+                    <p>{{ recipe.description }}</p>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="col s12 m3 center-align">
+                            <p><b>Author</b></p>
+                            <p>{{ recipe.author.title() }}</p>
+                        </div>
+                        <div class="col s12 m3 center-align">
+                            <p><b>Time to Make</b></p>
+                            <p>{{ recipe.time_to_make }} minutes</p>
+                        </div>
+                        <div class="col s12 m3 center-align">
+                            <p><b>Serves</b></p>
+                            <p>{{ recipe.serves }}</p>
+                        </div>
+                        <div class="col s12 m3 center-align">
+                            <p><b>Training Type</b></p>
+                            <p>{{ recipe.training_type.title() }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12">
+                    <div class="row">
+                        <div class="col s12 m3 center-align">
+                            <p><b>Difficulty</b></p>
+                            <p>{{ recipe.difficulty.title() }}</p>
+                        </div>
+                        <div class="col s12 m3 center-align">
+                            <p class=""><b>Allergens</b></p>
+                            <p>
+                                {% for allergen in recipe.allergens %}
+                                <span>{{ allergen.title() }},</span>
+                                {% endfor %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col s12 m4">
+                    <p><b>Ingredients</b></p>
+                    <ul>
+                        {% for ingr in recipe.ingredients %}
+                        <li>
+                            {{ ingr }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="col s12 m8">
+                    <p><b>Method</b></p>
+                    <ul>
+                        {% for step in recipe.method %}
+                        <li>{{ step }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-orange">Edit Recipe
+                <i class="material-icons right">edit</i>
+            </a>
+
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-red">Delete
+                <i class="material-icons right">remove_circle</i>
+            </a>
+
+        </div>
+        <!-- ./card-panel -->
+    </div>
+    <!-- ./container -->
+</div>
+<!-- ./background -->
+{% endblock %}
