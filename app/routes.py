@@ -1,5 +1,5 @@
 from app import app
-from flask import Flask, render_template, request, session, url_for, redirect, flash
+from flask import render_template, request, session, url_for, redirect, flash
 from bson.objectid import ObjectId
 
 from app import mongo
@@ -12,7 +12,7 @@ def index():
     """ Landing page which displays login form if not already signed in  """
 
     if "username" in session:
-        return redirect(url_for('recipes'))
+        return redirect(url_for('get_types'))
     else:
         return render_template('index.html')
 
@@ -28,7 +28,7 @@ def login():
         session['username'] = request.form['username']
         name = user['first-name'].title()
         session['name'] = name
-        return redirect(url_for('recipes'))
+        return redirect(url_for('get_types'))
     else:
         flash("Username '{}' not found or invalid. Please try again or create an account by clicking on 'Sign Up'".format(request.form['username']))
         return redirect('index')
@@ -204,6 +204,45 @@ def delete_recipe(recipe_id):
     flash("'{}' was successfully deleted.".format(recipe_to_delete['name_of_recipe'].title()))
 
     return redirect(url_for('recipes'))
+
+# --------------------------------------------------------------------- Landing page
+@app.route('/get_types')
+def get_types():
+    """ Display training types """
+
+    return render_template('get_types.html', title='Training Types')
+
+# --------------------------------------------------------------------- Types
+@app.route('/endurance')
+def endurance():
+    """ Get all recipes with training type of 'endurance' from recipes collection """
+
+    recipe = mongo.db.recipes.find({"training_type": "endurance"})
+    return render_template('recipe_training.html', recipe=recipe)
+
+
+@app.route('/power')
+def power():
+    """ Get all recipes with training type of 'power' from recipes collection """
+
+    recipe = mongo.db.recipes.find({"training_type": "power"})
+    return render_template('recipe_training.html', recipe=recipe)
+
+
+@app.route('/strength')
+def strength():
+    """ Get all recipes with training type of 'strength' from recipes collection """
+
+    recipe = mongo.db.recipes.find({"training_type": "strength"})
+    return render_template('recipe_training.html', recipe=recipe)
+
+
+@app.route('/speed')
+def speed():
+    """ Get all recipes with training type of 'speed' from recipes collection """
+
+    recipe = mongo.db.recipes.find({"training_type": "speed"})
+    return render_template('recipe_training.html', recipe=recipe)
 
 # --------------------------------------------------------------------- Test page
 @app.route('/test')

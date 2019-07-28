@@ -4,31 +4,7 @@
 <main>
     <div class="background">
         <div class="container">
-            <br>
-            <div class="row">
-                <div class="col s12 m8">
-                    <h1>Recipes</h1>
-                </div>
-                <div class="col s12 m4 right-align">
-                    <!-- Dropdown Trigger -->
-                    <a class='dropdown-button btn waves-effect waves-orange' href='#' data-activates='sortby-dropdown'>Sort By
-                        <i class="material-icons">arrow_drop_down</i>
-                    </a>
-
-                    <!-- Dropdown Structure -->
-                    <ul id='sortby-dropdown' class='dropdown-content'>
-                        <li><a href="#">Upvotes | High to Low</a></li>
-                        <li><a href="#!">Upvotes | Low to High</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#!">Rating | High to Low</a></li>
-                        <li><a href="#!">Rating | Low to High</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#!">Time to Make | Quickest</a></li>
-                        <li><a href="#!">Time to Make | Longest</a></li>
-                    </ul>
-                </div>
-            </div>
-            {% for rec in recipes %}
+            {% for rec in recipe %}
 
             <div class="row">
                 <div class="col s12">

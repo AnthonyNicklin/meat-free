@@ -1,4 +1,10 @@
 /* ------------------------------------------------- General */
+@import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap');
+
+.mountain_font {
+    font-family: 'Mountains of Christmas', cursive;
+     }
+
 .background {
     background-color: #eeeeee;
     height: 100%;
@@ -9,6 +15,11 @@ html {
     color: ##47525E;
     }
 
+body {
+    width: 100%;
+    height: 100%
+    }
+
 h1 {
     margin-top: 0rem;
     padding-left: 1rem;
@@ -17,6 +28,7 @@ h1 {
 .waves-effect.waves-orange {
     background-color: #FF9052;
     }
+
 .waves-effect.waves-red {
     background-color: #EF6666;
     }
@@ -69,6 +81,49 @@ img.recipe_image {
     width: 18rem;
     }
 
+img.training_image {
+    height: 250px;
+    }
+
+
 .card-panel: {
     margin-top: 0rem;
     }
+
+.training-title {
+    padding: 4.5rem;
+    color: #FF9052;
+    text-shadow: 1px 1px #696969
+    }
+
+.card {
+    top: 3rem;
+    margin-bottom: 5rem;
+    }
+/*-------------------------------------------------- Footer*/
+.footer-container {
+    background-color: #343F4B;
+    padding: 15px;
+    text-align: center;
+    display: block;
+}
+.copyright a {
+    color: #ffffff;
+}
+.social-links a {
+    color: #ffffff;
+    font-size: 20px;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+}
+
+.social-links a .fa-facebook-f:hover {
+    color: #3b5998;
+}
+
+.social-links a .fa-instagram:hover {
+    color: #833AB4;
+}
+.social-links a .fa-twitter:hover {
+    color: #1da1f2;
+}
