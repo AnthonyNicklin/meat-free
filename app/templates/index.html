@@ -27,56 +27,85 @@
 
 </head>
 
+<body>
+    <header>
 
-<header>
+        <nav class="bg-green">
+            <div class="nav-wrapper"></div>
+        </nav>
+        <!--End of header and Navigation-->
 
-    <nav class="bg-green">
-        <div class="nav-wrapper"></div>
-    </nav>
-    <!--End of header and Navigation-->
+    </header>
+    <div class="background">
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
 
-</header>
-<div class="background">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
+                    <div class="center-align">
+                        <img id="logo-login" src="{{ url_for ('static', filename='images/meat_free_logo_grey.png') }}" alt="Meat Free Logo">
+                    </div>
 
-                <div class="center-align">
-                    <img id="logo-login" src="{{ url_for ('static', filename='images/meat_free_logo_grey.png') }}" alt="Meat Free Logo">
-                </div>
+                    <div class="card-panel">
 
-                <div class="card-panel">
+                        <form action="{{ url_for('login') }}" method="POST">
+                            <h1 class="center-align">Login</h1>
+                            <p class="center-align">Login to access recipes for vegetarian athletes and contribute to our ever growing community</p>
 
-                    <form action="{{ url_for('login') }}" method="POST">
-                        <h1 class="center-align">Login</h1>
-                        <p class="center-align">Login to access recipes for vegetarian athletes and contribute to our ever growing community</p>
-
-                        <div class="row">
-                            <div class="form-group col s12">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control validate" id="username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
+                            <div class="row">
+                                <div class="form-group col s12">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control validate" id="username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
+                                </div>
                             </div>
-                        </div>
 
-                        <button type="submit" class="waves-effect waves-orange btn">Submit</button>
-                        <p>Don't have an account? Please <a href="{{ url_for ('sign_up') }}"> Sign up</a> here.</p>
+                            <button type="submit" class="waves-effect waves-orange btn">Submit</button>
+                            <p>Don't have an account? Please <a href="{{ url_for ('sign_up') }}"> Sign up</a> here.</p>
 
-                    </form>
+                        </form>
 
+                    </div>
                 </div>
             </div>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-info" role="alert">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
         </div>
-
-        {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="alert alert-info" role="alert">{{ message }}</div>
-                {% endfor %}
-            {% endif %}
-        {% endwith %}
-
     </div>
-</div>
+
+    <!--Footer-->
+    <footer class="footer-container">
+        <div class="container">
+            <div class="social-links">
+
+                <a href="#" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="#" target="_blank">
+                <i class="fab fa-instagram"></i>
+                </a>
+                <a href="#" target="_blank">
+                <i class="fab fa-twitter"></i>
+                </a>
+
+            </div>
+            <!--./social-links-->
+
+            <div class="copyright">
+                <a href="https://github.com/AnthonyNicklin" target="_blank">&copy;2019 Anthony Nicklin</a>
+            </div>
+            <!--./copyright-->
+
+        </div>
+        <!--./container-->
+    </footer>
+    <!--End of footer-->
+
 </body>
 </html>
 
