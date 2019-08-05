@@ -33,8 +33,11 @@
 
     <!-- Navigation -->
     <header>
+
+        <!-- Medium to large screen Navbar -->
         <div class="navbar-fixed">
             <nav>
+
                 <div class="nav-wrapper">
                     <a href="{{ url_for('index') }}" class="brand-logo">
                         <img class="brand" src="{{ url_for ('static', filename='images/meat_free_logo_green.png') }}" alt="Meat Free Logo">
@@ -42,20 +45,26 @@
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul class="right hide-on-med-and-down">
-                        <li class="mx-2"><a href="{{ url_for('recipes') }}">Recipes</a></li>
-                        <li class="mx-2"><a href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
-                        <li class="mx-2"><a href="#">Statists</a></li>
-                        <li class="mx-2"><a href="{{ url_for('logout') }}">Logout</a></li>
-                    </ul>
-                    <ul class="side-nav" id="mobile-demo">
-                        <li class="mx-2"><a href="{{ url_for('recipes') }}">Recipes</a></li>
-                        <li class="mx-2"><a href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
-                        <li class="mx-2"><a href="#">Statists</a></li>
-                        <li class="mx-2"><a href="{{ url_for('logout') }}">Logout</a></li>
+                        <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+                        <li><a href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
+                        <li><a href="#">Statists</a></li>
+                        <li><a href="{{ url_for('logout') }}">Logout</a></li>
                     </ul>
                 </div>
+
             </nav>
         </div>
+        <!-- End medium to large screen Navbar -->
+
+        <!-- Mobile Navbar -->
+        <ul class="side-nav" id="mobile-demo">
+            <li><a href="{{ url_for('recipes') }}">Recipes</a></li>
+            <li><a href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
+            <li><a href="#">Statists</a></li>
+            <li><a href="{{ url_for('logout') }}">Logout</a></li>
+        </ul>
+        <!-- End mobile Navbar -->
+
     </header>
     <!--End of header and Navigation-->
 
