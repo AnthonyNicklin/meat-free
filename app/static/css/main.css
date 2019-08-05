@@ -5,19 +5,28 @@
     font-family: 'Mountains of Christmas', cursive;
      }
 
-.background {
-    background-color: #eeeeee;
-    height: 100%;
-    width: 100%;
+/*body {
+    background: url(../images/eating.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     }
-
-html {
-    color: ##47525E;
-    }
-
+*/
+html,
 body {
-    width: 100%;
-    height: 100%
+   color: #47525E;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background-color: #eeeeee;
+   width: 100%;
+}
+
+main {
+    flex: 1 0 auto;
     }
 
 h1 {
@@ -45,6 +54,17 @@ a.btn {
     color: #000000;
     }
 
+.row {
+    margin-bottom: 0px;
+    }
+
+/* ------------------------------------------------- Background colour */
+.bg-light-green {
+    background-color: #eeeeee;
+    width: 100%;
+    height: 100%;
+    }
+
 /* ------------------------------------------------- Navigation */
 nav {
     margin-bottom: 0px;
@@ -65,9 +85,18 @@ img.brand {
 
 /* ------------------------------------------------- Logo */
 img#logo-login {
-    width: 25rem;
+    width: 5.5rem;
+    display: inline-block;
     }
 
+h1.logo-header {
+    display: inline-block;
+    padding-left: 0rem;
+    }
+
+.logo-container {
+    margin-top: 2rem;
+    }
 /* ------------------------------------------------- Cards */
 .recipe_details {
     display: inline-block;
@@ -105,13 +134,12 @@ img.training_image {
     background-color: #343F4B;
     padding: 15px;
     text-align: center;
-    display: block;
 }
 .copyright a {
-    color: #ffffff;
+    color: #47525E;
 }
 .social-links a {
-    color: #ffffff;
+    color: #47525E;
     font-size: 20px;
     padding: 5px 5px 5px 5px;
     text-decoration: none;

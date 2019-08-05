@@ -2,135 +2,127 @@
 
 {% block content %}
 
-<div class="background">
-    <div class="container">
-        <br>
-        <h4 class="center-align">Welcome {{ session.name.title() }}, select recipes from a training type</h4>
+<br>
+<h4 class="center-align">Welcome {{ session.name.title() }}, select recipes from a training type</h4>
 
-        <div class="row">
-            <div class="col s12 m6">
-                <a href="{{ url_for('endurance') }}">
-                    <div class="card">
-                        <h1 class="mountain_font center-align training-title">Endurance</h1>
-                    </div>
-                </a>
+<div class="row">
+    <div class="col s12 m6">
+        <a href="{{ url_for('endurance') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Endurance</h1>
             </div>
-            <div class="col s12 m6">
-                <a href="{{ url_for('speed') }}">
-                    <div class="card">
-                        <h1 class="mountain_font center-align training-title">Speed</h1>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col s12 m6">
-                <a href="{{ url_for('strength') }}">
-                    <div class="card">
-                        <h1 class="mountain_font center-align training-title">Strength</h1>
-                    </div>
-                </a>
-            </div>
-            <div class="col s12 m6">
-                <a href="{{ url_for('power') }}">
-                    <div class="card">
-                        <h1 class="mountain_font center-align training-title">Power</h1>
-                    </div>
-                </a>
-            </div>
-        </div>
-
-
-<!--        <div class="row">-->
-<!--            <div class="col s12 m6">-->
-<!--                <div class="card medium">-->
-
-<!--                    <div class="card-image">-->
-<!--                        <img class="training_image" src="{{ url_for ('static', filename='images/runners.jpg') }}"-->
-<!--                             alt="Runners">-->
-<!--                        <span class="card-title training-title">Endurance</span>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-content">-->
-<!--                        <p>Increase your endurance with recipes to help recover from them long sessions or, fuel up-->
-<!--                        ready for the next one.</p>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-action">-->
-<!--                    <a href="#">Endurance</a>-->
-<!--                    </div>-->
-
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="col s12 m6">-->
-<!--                <div class="card medium">-->
-
-<!--                    <div class="card-image">-->
-<!--                        <img class="training_image" src="{{ url_for ('static', filename='images/workout.jpg') }}" alt="Gym">-->
-<!--                        <span class="card-title training-title">Strength</span>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-content">-->
-<!--                        <p>Lift heavy or got home! With these recipes your be breaking PBs all day long.</p>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-action">-->
-<!--                    <a href="#">Strength</a>-->
-<!--                    </div>-->
-
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;./row&ndash;&gt;-->
-
-<!--        <div class="row">-->
-<!--            <div class="col s12 m6">-->
-<!--                <div class="card medium">-->
-
-<!--                    <div class="card-image">-->
-<!--                        <img class="training_image" src="{{ url_for ('static', filename='images/boy.jpg') }}" alt="Man diving">-->
-<!--                        <span class="card-title training-title">Power</span>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-content">-->
-<!--                        <p>Eating the correct food with help you gain power to increase overall fitness and strength-->
-<!--                        in all your workouts and training sessions.</p>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-action">-->
-<!--                    <a href="#">Power</a>-->
-<!--                    </div>-->
-
-<!--                </div>-->
-<!--            </div>-->
-
-<!--            <div class="col s12 m6">-->
-<!--                <div class="card medium">-->
-
-<!--                    <div class="card-image">-->
-<!--                        <img class="training_image" src="{{ url_for ('static', filename='images/athletics.jpg') }}" alt="Athlete running">-->
-<!--                        <span class="card-title training-title">Speed</span>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-content">-->
-<!--                        <p>Can't catch this.... Get better times on the track with amazing recipes!</p>-->
-<!--                    </div>-->
-
-<!--                    <div class="card-action">-->
-<!--                    <a href="#">Speed</a>-->
-<!--                    </div>-->
-
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--        &lt;!&ndash;./row &ndash;&gt;-->
-
+        </a>
     </div>
-    <!--./container-->
-
+    <div class="col s12 m6">
+        <a href="{{ url_for('speed') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Speed</h1>
+            </div>
+        </a>
+    </div>
 </div>
-<!--./background -->
+
+<div class="row">
+    <div class="col s12 m6">
+        <a href="{{ url_for('strength') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Strength</h1>
+            </div>
+        </a>
+    </div>
+    <div class="col s12 m6">
+        <a href="{{ url_for('power') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Power</h1>
+            </div>
+        </a>
+    </div>
+</div>
+
+
+    <!--        <div class="row">-->
+    <!--            <div class="col s12 m6">-->
+    <!--                <div class="card medium">-->
+
+    <!--                    <div class="card-image">-->
+    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/runners.jpg') }}"-->
+    <!--                             alt="Runners">-->
+    <!--                        <span class="card-title training-title">Endurance</span>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-content">-->
+    <!--                        <p>Increase your endurance with recipes to help recover from them long sessions or, fuel up-->
+    <!--                        ready for the next one.</p>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-action">-->
+    <!--                    <a href="#">Endurance</a>-->
+    <!--                    </div>-->
+
+    <!--                </div>-->
+    <!--            </div>-->
+
+    <!--            <div class="col s12 m6">-->
+    <!--                <div class="card medium">-->
+
+    <!--                    <div class="card-image">-->
+    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/workout.jpg') }}" alt="Gym">-->
+    <!--                        <span class="card-title training-title">Strength</span>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-content">-->
+    <!--                        <p>Lift heavy or got home! With these recipes your be breaking PBs all day long.</p>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-action">-->
+    <!--                    <a href="#">Strength</a>-->
+    <!--                    </div>-->
+
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;./row&ndash;&gt;-->
+
+    <!--        <div class="row">-->
+    <!--            <div class="col s12 m6">-->
+    <!--                <div class="card medium">-->
+
+    <!--                    <div class="card-image">-->
+    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/boy.jpg') }}" alt="Man diving">-->
+    <!--                        <span class="card-title training-title">Power</span>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-content">-->
+    <!--                        <p>Eating the correct food with help you gain power to increase overall fitness and strength-->
+    <!--                        in all your workouts and training sessions.</p>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-action">-->
+    <!--                    <a href="#">Power</a>-->
+    <!--                    </div>-->
+
+    <!--                </div>-->
+    <!--            </div>-->
+
+    <!--            <div class="col s12 m6">-->
+    <!--                <div class="card medium">-->
+
+    <!--                    <div class="card-image">-->
+    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/athletics.jpg') }}" alt="Athlete running">-->
+    <!--                        <span class="card-title training-title">Speed</span>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-content">-->
+    <!--                        <p>Can't catch this.... Get better times on the track with amazing recipes!</p>-->
+    <!--                    </div>-->
+
+    <!--                    <div class="card-action">-->
+    <!--                    <a href="#">Speed</a>-->
+    <!--                    </div>-->
+
+    <!--                </div>-->
+    <!--            </div>-->
+    <!--        </div>-->
+    <!--        &lt;!&ndash;./row &ndash;&gt;-->
 
 {% endblock %}

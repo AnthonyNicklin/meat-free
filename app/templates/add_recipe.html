@@ -2,175 +2,168 @@
 
 {% block content %}
 
+<br>
+<h1> Add Recipe </h1>
 
-<div class="background">
-    <div class="container">
-        <br>
-        <h1> Add Recipe </h1>
+<div class="row">
+    <div class="col s12">
+        <div class="card-panel">
+            <form id="add_recipe_form" action="{{ url_for('insert_recipe') }}" method="POST">
 
-        <div class="row">
-            <div class="col s12">
-                <div class="card-panel">
-                    <form id="add_recipe_form" action="{{ url_for('insert_recipe') }}" method="POST">
+                                                                    <!-- Recipe Name -->
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input id="name" type="text" name="name_of_recipe" required>
+                        <label for="name">Recipe Name</label>
+                    </div>
 
-                                                                            <!-- Recipe Name -->
-                        <div class="row">
-                            <div class="input-field col s12 m6">
-                                <input id="name" type="text" name="name_of_recipe" required>
-                                <label for="name">Recipe Name</label>
-                            </div>
-
-                                                                                    <!-- Author -->
-                            <div class="input-field col s12 m6">
-                                <input id="author" type="text" name="author" required>
-                                <label for="author">Author</label>
-                            </div>
-                        </div>
-
-                                                                                    <!-- Description -->
-                        <div class="row">
-                            <div class="input-field col s12">
-                                <textarea id="description" name="description" class="materialize-textarea" required></textarea>
-                                <label for="description">Description</label>
-                            </div>
-                        </div>
-                                                                                    <!-- Time to Make -->
-                        <div class="row">
-                            <div class="input-field col s12 m6">
-                                <input id="time_to_make" name="time_to_make" type="text">
-                                <label for="time_to_make">Time to Make in minutes</label>
-                            </div>
-
-                            <div class="input-field col s12 m6">                        <!-- Training Type -->
-                                <select name="training_type">
-                                    <option value="training_type" disabled selected>Training Type</option>
-                                    <option value="endurance">Endurance</option>
-                                    <option value="speed">Speed</option>
-                                    <option value="power">Power</option>
-                                    <option value="strength">Strength</option>
-                                </select>
-                                <label>Training Type</label>
-                            </div>
-
-                        </div>
-                                                                        <!-- Serves -->
-                        <div class="input-field col s12">
-                            <label for="serves">Serves</label>
-                            <br>
-                            <input id="serves" name="serves" min="1" max="10" type="range">
-                        </div>
-                                                                                <!-- Allergens -->
-                        <div class="row">
-
-                            <div class="input-field col s12">
-                                <label>Allergens</label>
-                                <br>
-                                <p>
-                                    <span>
-                                        <input id="cereals" type="checkbox" name="allergens" value="cereals">
-                                        <label for="cereals">Cereals</label>
-                                    </span>
-                                    <span>
-                                        <input id="nuts" type="checkbox" name="allergens" value="nuts">
-                                        <label for="nuts">Nuts</label>
-                                    </span>
-                                    <span>
-                                        <input id="eggs" type="checkbox" name="allergens" value="eggs">
-                                        <label for="eggs">Eggs</label>
-                                    </span>
-                                    <span>
-                                        <input id="soyabeans" type="checkbox" name="allergens" value="soybeans">
-                                        <label for="soyabeans">Soybeans</label>
-                                    </span>
-                                    <span>
-                                        <input id="sesame" type="checkbox" name="allergens" value="sesame">
-                                        <label for="sesame">Sesame</label>
-                                    </span>
-                                    <span>
-                                        <input id="lupin" type="checkbox" name="allergens" value="lupin">
-                                        <label for="lupin">Lupin</label>
-                                    </span>
-                                    <span>
-                                        <input id="celery" type="checkbox" name="allergens" value="celery">
-                                        <label for="celery">Celery</label>
-                                    </span>
-                                        <span>
-                                        <input id="peanuts" type="checkbox" name="allergens" value="peanuts">
-                                        <label for="peanuts">Peanuts</label>
-                                    </span>
-                                    <span>
-                                        <input id="milk" type="checkbox" name="allergens" value="milk">
-                                        <label for="milk">Milk</label>
-                                    </span>
-                                </p>
-                            </div>
-                        </div>
-                        <br>
-                                                                                        <!-- Difficulty -->
-                        <div class="row">
-                            <div class="input-field col s12 m6">
-                                <select name="difficulty" required>
-                                    <option value="difficulty" disabled selected>Select Difficulty</option>
-                                    <option value="easy">Easy</option>
-                                    <option value="medium">Medium</option>
-                                    <option value="hard">Hard</option>
-                                </select>
-                                <label>Difficulty</label>
-                            </div>
-
-                                                                                    <!-- Meal Time -->
-                            <div class="input-field col s12 m6">
-                                <select name="meal_time" required>
-                                    <option value="meal_time" disabled selected>Meal Time</option>
-                                    <option value="breakfast">Breakfast</option>
-                                    <option value="lunch">Lunch</option>
-                                    <option value="dinner">Dinner</option>
-                                </select>
-                                <label>Meal Time</label>
-                            </div>
-                        </div>
-
-                                                                                      <!-- Ingredient -->
-                        <div class="row">
-                            <div class="input-field ingre_wrapper col s12">
-                                <input name="ingredient" id="ingredient" type="text"/>
-                                <label for="ingredient">Add Ingredients</label>
-                            </div>
-
-                            <a href="javascript:void(0);" id="add_ingredient"><i class="material-icons">add</i></a>
-                            <a href="javascript:void(0);" id="remove_ingredient"><i class="material-icons">remove</i></a>
-
-                        </div>
-                                                                                        <!-- Method -->
-                        <div class="row">
-                            <div class="input-field method_wrapper col s12">
-                                <input name="method" id="method" type="text"/>
-                                <label for="method">Add Method steps</label>
-                            </div>
-
-                            <a href="javascript:void(0);" id="add_method"><i class="material-icons">add</i></a>
-                            <a href="javascript:void(0);" id="remove_method"><i class="material-icons">remove</i></a>
-
-                        </div>
-
-                        <button class="btn waves-effect waves-orange" type="submit">Add Recipe
-                            <i class="material-icons right">playlist_add</i>
-                        </button>
-
-
-                        <a href="{{ url_for('recipes') }}" class="btn waves-effect waves-orange reset-btn">Cancel
-                            <i class="material-icons right">clear_all</i>
-                        </a>
-
-
-                    </form>
+                                                                            <!-- Author -->
+                    <div class="input-field col s12 m6">
+                        <input id="author" type="text" name="author" required>
+                        <label for="author">Author</label>
+                    </div>
                 </div>
-            </div>
+
+                                                                            <!-- Description -->
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="description" name="description" class="materialize-textarea" required></textarea>
+                        <label for="description">Description</label>
+                    </div>
+                </div>
+                                                                            <!-- Time to Make -->
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <input id="time_to_make" name="time_to_make" type="text">
+                        <label for="time_to_make">Time to Make in minutes</label>
+                    </div>
+
+                    <div class="input-field col s12 m6">                        <!-- Training Type -->
+                        <select name="training_type">
+                            <option value="training_type" disabled selected>Training Type</option>
+                            <option value="endurance">Endurance</option>
+                            <option value="speed">Speed</option>
+                            <option value="power">Power</option>
+                            <option value="strength">Strength</option>
+                        </select>
+                        <label>Training Type</label>
+                    </div>
+
+                </div>
+                                                                <!-- Serves -->
+                <div class="input-field col s12">
+                    <label for="serves">Serves</label>
+                    <br>
+                    <input id="serves" name="serves" min="1" max="10" type="range">
+                </div>
+                                                                        <!-- Allergens -->
+                <div class="row">
+
+                    <div class="input-field col s12">
+                        <label>Allergens</label>
+                        <br>
+                        <p>
+                            <span>
+                                <input id="cereals" type="checkbox" name="allergens" value="cereals">
+                                <label for="cereals">Cereals</label>
+                            </span>
+                            <span>
+                                <input id="nuts" type="checkbox" name="allergens" value="nuts">
+                                <label for="nuts">Nuts</label>
+                            </span>
+                            <span>
+                                <input id="eggs" type="checkbox" name="allergens" value="eggs">
+                                <label for="eggs">Eggs</label>
+                            </span>
+                            <span>
+                                <input id="soyabeans" type="checkbox" name="allergens" value="soybeans">
+                                <label for="soyabeans">Soybeans</label>
+                            </span>
+                            <span>
+                                <input id="sesame" type="checkbox" name="allergens" value="sesame">
+                                <label for="sesame">Sesame</label>
+                            </span>
+                            <span>
+                                <input id="lupin" type="checkbox" name="allergens" value="lupin">
+                                <label for="lupin">Lupin</label>
+                            </span>
+                            <span>
+                                <input id="celery" type="checkbox" name="allergens" value="celery">
+                                <label for="celery">Celery</label>
+                            </span>
+                                <span>
+                                <input id="peanuts" type="checkbox" name="allergens" value="peanuts">
+                                <label for="peanuts">Peanuts</label>
+                            </span>
+                            <span>
+                                <input id="milk" type="checkbox" name="allergens" value="milk">
+                                <label for="milk">Milk</label>
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <br>
+                                                                                <!-- Difficulty -->
+                <div class="row">
+                    <div class="input-field col s12 m6">
+                        <select name="difficulty" required>
+                            <option value="difficulty" disabled selected>Select Difficulty</option>
+                            <option value="easy">Easy</option>
+                            <option value="medium">Medium</option>
+                            <option value="hard">Hard</option>
+                        </select>
+                        <label>Difficulty</label>
+                    </div>
+
+                                                                            <!-- Meal Time -->
+                    <div class="input-field col s12 m6">
+                        <select name="meal_time" required>
+                            <option value="meal_time" disabled selected>Meal Time</option>
+                            <option value="breakfast">Breakfast</option>
+                            <option value="lunch">Lunch</option>
+                            <option value="dinner">Dinner</option>
+                        </select>
+                        <label>Meal Time</label>
+                    </div>
+                </div>
+
+                                                                              <!-- Ingredient -->
+                <div class="row">
+                    <div class="input-field ingre_wrapper col s12">
+                        <input name="ingredient" id="ingredient" type="text"/>
+                        <label for="ingredient">Add Ingredients</label>
+                    </div>
+
+                    <a href="javascript:void(0);" id="add_ingredient"><i class="material-icons">add</i></a>
+                    <a href="javascript:void(0);" id="remove_ingredient"><i class="material-icons">remove</i></a>
+
+                </div>
+                                                                                <!-- Method -->
+                <div class="row">
+                    <div class="input-field method_wrapper col s12">
+                        <input name="method" id="method" type="text"/>
+                        <label for="method">Add Method steps</label>
+                    </div>
+
+                    <a href="javascript:void(0);" id="add_method"><i class="material-icons">add</i></a>
+                    <a href="javascript:void(0);" id="remove_method"><i class="material-icons">remove</i></a>
+
+                </div>
+
+                <button class="btn waves-effect waves-orange" type="submit">Add Recipe
+                    <i class="material-icons right">playlist_add</i>
+                </button>
+
+
+                <a href="{{ url_for('recipes') }}" class="btn waves-effect waves-orange reset-btn">Cancel
+                    <i class="material-icons right">clear_all</i>
+                </a>
+
+
+            </form>
         </div>
-        <!-- ./row -->
     </div>
-    <!-- ./container -->
 </div>
-<!-- ./background -->
+<!-- ./row -->
 
 {% endblock %}

@@ -1,84 +1,79 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<main>
-    <div class="background">
-        <div class="container">
-            <br>
-            <div class="row">
-                <div class="col s12 m8">
-                    <h1>Recipes</h1>
-                </div>
-                <div class="col s12 m4 right-align">
-                    <!-- Dropdown Trigger -->
-                    <a class='dropdown-button btn waves-effect waves-orange' href='#' data-activates='sortby-dropdown'>Sort By
-                        <i class="material-icons">arrow_drop_down</i>
-                    </a>
 
-                    <!-- Dropdown Structure -->
-                    <ul id='sortby-dropdown' class='dropdown-content'>
-                        <li><a href="#">Upvotes | High to Low</a></li>
-                        <li><a href="#!">Upvotes | Low to High</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#!">Rating | High to Low</a></li>
-                        <li><a href="#!">Rating | Low to High</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#!">Time to Make | Quickest</a></li>
-                        <li><a href="#!">Time to Make | Longest</a></li>
-                    </ul>
-                </div>
-            </div>
-            {% for rec in recipes %}
+<br>
+<div class="row">
+    <div class="col s12 m8">
+        <h1>Recipes</h1>
+    </div>
+    <div class="col s12 m4 right-align">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-button btn waves-effect waves-orange' href='#' data-activates='sortby-dropdown'>Sort By
+            <i class="material-icons">arrow_drop_down</i>
+        </a>
 
-            <div class="row">
-                <div class="col s12">
-                    <div class="card">
+        <!-- Dropdown Structure -->
+        <ul id='sortby-dropdown' class='dropdown-content'>
+            <li><a href="{{ url_for('upvotes_high') }}">Most Upvotes</a></li>
+            <li><a href="{{ url_for('upvotes_low') }}">Least Upvotes</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ url_for('rating_high') }}">Highest Rated</a></li>
+            <li><a href="{{ url_for('rating_low') }}">Lowest Rated</a></li>
+            <li class="divider"></li>
+            <li><a href="{{ url_for('time_high') }}">Quick to make</a></li>
+            <li><a href="{{ url_for('time_low') }}">Bit longer to make</a></li>
+        </ul>
+    </div>
+</div>
+{% for rec in recipes %}
 
-                        <div class="card-content">
-                            <span class="card-title center-align"><b>{{ rec.name_of_recipe }}</b></span>
-                            <br>
+<div class="row">
+    <div class="col s12">
+        <div class="card">
 
-                            <p class="center-align">{{ rec.description }}</p>
-                            <br>
-                            <br>
-                            <div class="row">
-                                <div class="recipe_details center-align col s3">
-                                    <p><b>Difficulty</b></p>
-                                    <p>{{ rec.difficulty.title() }}</p>
-                                </div>
-                                <div class="recipe_details center-align col s3">
-                                    <p><b>Time to make</b></p>
-                                    <p>{{ rec.time_to_make }}</p>
-                                </div>
-                                <div class="recipe_details center-align col s3">
-                                    <p><b>Rating</b></p>
-                                    <p><i class="material-icons gold-star">star</i>{{ rec.rating }}</p>
-                                </div>
-                                <div class="recipe_details center-align col s3">
-                                    <p><b>Serves</b></p>
-                                    <p>{{ rec.serves }}</p>
-                                </div>
-                            </div>
+            <div class="card-content">
+                <span class="card-title center-align"><b>{{ rec.name_of_recipe }}</b></span>
+                <br>
 
-                            <div class="row">
-                                 <div class="center-align col s12">
-                                     <p class="detail_link"><a href="{{ url_for('recipe_detail', recipe_id=rec._id) }}">
-                                         Click for full recipe</a></p>
-                                 </div>
-                            </div>
-
-                        </div>
-
+                <p class="center-align">{{ rec.description }}</p>
+                <br>
+                <br>
+                <div class="row">
+                    <div class="recipe_details center-align col s3">
+                        <p><b>Difficulty</b></p>
+                        <p>{{ rec.difficulty.title() }}</p>
                     </div>
-                    <!--./card -->
+                    <div class="recipe_details center-align col s3">
+                        <p><b>Time to make</b></p>
+                        <p>{{ rec.time_to_make }}</p>
+                    </div>
+                    <div class="recipe_details center-align col s3">
+                        <p><b>Rating</b></p>
+                        <p><i class="material-icons gold-star">star</i>{{ rec.rating }}</p>
+                    </div>
+                    <div class="recipe_details center-align col s3">
+                        <p><b>Upvotes</b></p>
+                        <p>{{ rec.upvotes }}</p>
+                    </div>
                 </div>
-                <!--./col s12-->
-            </div>
-            <!--./row-->
 
-            {% endfor %}
+                <div class="row">
+                     <div class="center-align col s12">
+                         <p class="detail_link"><a href="{{ url_for('recipe_detail', recipe_id=rec._id) }}">
+                             Click for full recipe</a></p>
+                     </div>
+                </div>
+
+            </div>
 
         </div>
+        <!--./card -->
     </div>
-</main>
+    <!--./col s12-->
+</div>
+<!--./row-->
+
+{% endfor %}
+
 {% endblock %}
