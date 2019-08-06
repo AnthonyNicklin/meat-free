@@ -326,6 +326,14 @@ def time_high():
     return render_template('recipes.html', recipes=recipe, title='Recipes')
 
 
+# --------------------------------------------------------------------- Statists
+@app.route('/statists')
+def statists():
+    """ Page display data visulation about statists for the recipes """
+
+    return render_template('statists.html')
+
+
 # --------------------------------------------------------------------- Test page
 @app.route('/test')
 def test():
