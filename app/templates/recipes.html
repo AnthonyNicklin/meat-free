@@ -3,11 +3,12 @@
 {% block content %}
 
 <br>
+
+<h1>Recipes</h1>
+
 <div class="row">
-    <div class="col s12 m8">
-        <h1>Recipes</h1>
-    </div>
-    <div class="col s12 m4 right-align">
+
+        <div class="col s4 center-align">
         <!-- Dropdown Trigger -->
         <a class='dropdown-button btn waves-effect waves-orange' href='#' data-activates='sortby-dropdown'>Sort By
             <i class="material-icons">arrow_drop_down</i>
@@ -25,7 +26,39 @@
             <li><a href="{{ url_for('time_low') }}">Bit longer to make</a></li>
         </ul>
     </div>
+
+    <div class="col s4 center-align">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-button btn waves-effect waves-orange' href='#' data-activates='training-dropdown'>Training Types
+            <i class="material-icons">arrow_drop_down</i>
+        </a>
+
+        <!-- Dropdown Structure -->
+        <ul id='training-dropdown' class='dropdown-content'>
+            <li><a href="{{ url_for('sort_endurance') }}">Endurance</a></li>
+            <li><a href="{{ url_for('sort_speed') }}">Speed</a></li>
+            <li><a href="{{ url_for('sort_power') }}">Power</a></li>
+            <li><a href="{{ url_for('sort_strength') }}">Strength</a></li>
+        </ul>
+    </div>
+
+    <div class="col s4 center-align">
+        <!-- Dropdown Trigger -->
+        <a class='dropdown-button btn waves-effect waves-orange' href='#' data-activates='meal-dropdown'>Meal Times
+            <i class="material-icons">arrow_drop_down</i>
+        </a>
+
+        <!-- Dropdown Structure -->
+        <ul id='meal-dropdown' class='dropdown-content'>
+            <li><a href="{{ url_for('sort_breakfast') }}">Breakfast</a></li>
+            <li><a href="{{ url_for('sort_lunch') }}">Lunch</a></li>
+            <li><a href="{{ url_for('sort_dinner') }}">Dinner</a></li>
+        </ul>
+    </div>
+
 </div>
+<!--./row-->
+
 {% for rec in recipes %}
 
 <div class="row">

@@ -87,7 +87,6 @@ def recipes():
     """ Render template displaying all recipes in a summarised view from 'recipes' collection """
 
     recipe = mongo.db.recipes.find()
-
     return render_template('recipes.html', title='Recipes', recipes=recipe)
 
 # --------------------------------------------------------------------- Recipe detail
@@ -96,7 +95,6 @@ def recipe_detail(recipe_id):
     """ Render template to display a recipe in detail """
 
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-
     return render_template('recipe_detail.html', recipe=recipe)
 
 
@@ -177,7 +175,6 @@ def edit_recipe(recipe_id):
     """ Render the edit_recipe page for the recipe to be updated """
 
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-
     return render_template('edit_recipe.html', recipe=recipe)
 
 # --------------------------------------------------------------------- Update recipe
@@ -274,7 +271,6 @@ def rating_high():
     """ Display recipes with the highest ratings to the lowest """
 
     recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'rating': -1}})
-
     return render_template('recipes.html', recipes=recipe, title='Recipes')
 
 
@@ -284,7 +280,6 @@ def rating_low():
     """ Display recipes with the lowest ratings to the highest """
 
     recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'rating': 1}})
-
     return render_template('recipes.html', recipes=recipe, title='Recipes')
 
 
@@ -294,7 +289,6 @@ def upvotes_high():
     """ Display recipes with the highest upvotes to the lowest """
 
     recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'upvotes': -1}})
-
     return render_template('recipes.html', recipes=recipe, title='Recipes')
 
 
@@ -304,7 +298,6 @@ def upvotes_low():
     """ Display recipes with the lowest upvotes to the highest """
 
     recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'upvotes': 1}})
-
     return render_template('recipes.html', recipes=recipe, title='Recipes')
 
 
@@ -314,7 +307,6 @@ def time_low():
     """ Display recipes with the quickest time to make first """
 
     recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'time_to_make': -1}})
-
     return render_template('recipes.html', recipes=recipe, title='Recipes')
 
 
@@ -324,11 +316,73 @@ def time_high():
     """ Display recipes with the longest time to make first """
 
     recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'time_to_make': 1}})
-
     return render_template('recipes.html', recipes=recipe, title='Recipes')
 
 
-# --------------------------------------------------------------------- Statists
+# --------------------------------------------------------------------- Sort Endurance
+@app.route('/sort_endurance')
+def sort_endurance():
+    """ Display recipes with training type Endurance """
+
+    recipe = mongo.db.recipes.find({"training_type": 'endurance'})
+    return render_template('recipes.html', recipes=recipe, title='Recipes')
+
+
+# --------------------------------------------------------------------- Sort Speed
+@app.route('/sort_speed')
+def sort_speed():
+    """ Display recipes with training type Speed """
+
+    recipe = mongo.db.recipes.find({"training_type": 'speed'})
+    return render_template('recipes.html', recipes=recipe, title='Recipes')
+
+
+# --------------------------------------------------------------------- Sort Power
+@app.route('/sort_power')
+def sort_power():
+    """ Display recipes with training type Power """
+
+    recipe = mongo.db.recipes.find({"training_type": 'power'})
+    return render_template('recipes.html', recipes=recipe, title='Recipes')
+
+
+# --------------------------------------------------------------------- Sort Strength
+@app.route('/sort_strength')
+def sort_strength():
+    """ Display recipes with training type Strength """
+
+    recipe = mongo.db.recipes.find({"training_type": 'strength'})
+    return render_template('recipes.html', recipes=recipe, title='Recipes')
+
+
+# --------------------------------------------------------------------- Sort Breakfast
+@app.route('/sort_breakfast')
+def sort_breakfast():
+    """ Display recipes with meal-time of breakfast """
+
+    recipe = mongo.db.recipes.find({"meal_time": 'breakfast'})
+    return render_template('recipes.html', recipes=recipe, title='Recipes')
+
+
+# --------------------------------------------------------------------- Sort Lunch
+@app.route('/sort_lunch')
+def sort_lunch():
+    """ Display recipes with meal-time of lunch """
+
+    recipe = mongo.db.recipes.find({"meal_time": 'lunch'})
+    return render_template('recipes.html', recipes=recipe, title='Recipes')
+
+
+# --------------------------------------------------------------------- Sort Dinner
+@app.route('/sort_dinner')
+def sort_dinner():
+    """ Display recipes with meal-time of dinner """
+
+    recipe = mongo.db.recipes.find({"meal_time": 'dinner'})
+    return render_template('recipes.html', recipes=recipe, title='Recipes')
+
+
+# --------------------------------------------------------------------- statistics
 @app.route('/statistics')
 def statistics():
     """ Page display data visualization about statistics for the recipes """
