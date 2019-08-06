@@ -3,6 +3,27 @@
 {% block content %}
 
 <br>
-<h1>Statists</h1>
+<h1>Statistics</h1>
 
+<div class="row">
+    <div class="chart col s12 m7">
+        <embed type="image/svg+xml" src="{{ pie_chart|safe }}" />
+    </div>
+    <div class="col s12 m5 center-align">
+        <h3>Meal-times</h3>
+        <p>The pie chart shows you how many recipes there are per meal-time.</p>
+    </div>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col s12 m5 center-align">
+        <h3>Training Types</h3>
+        <p>This bar chart shows you how many recipes per training type.</p>
+    </div>
+    <div class="chart col s12 m7">
+        <embed type="image/svg+xml" src="{{ line_chart|safe }}" />
+    </div>
+</div>
 {% endblock %}

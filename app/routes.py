@@ -1,3 +1,5 @@
+from pygal import Pie, Bar
+
 from app import app
 from flask import render_template, request, session, url_for, redirect, flash
 from bson.objectid import ObjectId
@@ -327,11 +329,42 @@ def time_high():
 
 
 # --------------------------------------------------------------------- Statists
-@app.route('/statists')
-def statists():
-    """ Page display data visulation about statists for the recipes """
+@app.route('/statistics')
+def statistics():
+    """ Page display data visualization about statistics for the recipes """
 
-    return render_template('statists.html')
+    # Get the count of all the documents in recipes collection
+    recipe_count = mongo.db.recipes.find().count()
+
+    # Count how many recipes have each meal time to send to the pie chart
+    breakfast = mongo.db.recipes.find({'meal_time': 'breakfast'}).count()
+    lunch = mongo.db.recipes.find({'meal_time': 'lunch'}).count()
+    dinner = mongo.db.recipes.find({'meal_time': 'dinner'}).count()
+
+    # Build pie chart
+    pie_chart = Pie()
+    pie_chart.title = 'Meal Times'
+    pie_chart.add('Breakfast', breakfast)
+    pie_chart.add('Lunch', lunch)
+    pie_chart.add('Dinner', dinner)
+    pie_chart = pie_chart.render_data_uri()
+
+    # Count how many recipes have each training type to send to line chart
+    endurance = mongo.db.recipes.find({'training_type': 'endurance'}).count()
+    speed = mongo.db.recipes.find({'training_type': 'speed'}).count()
+    strength = mongo.db.recipes.find({'training_type': 'strength'}).count()
+    power = mongo.db.recipes.find({'training_type': 'power'}).count()
+
+    # Build line chart
+    line_chart = Bar()
+    line_chart.title = 'Training Types'
+    line_chart.add('Endurance', [{'value': endurance, 'label': 'Endurance'}])
+    line_chart.add('Strength', [{'value': strength, 'label': 'Strength'}])
+    line_chart.add('Power', [{'value': power, 'label': 'Power'}])
+    line_chart.add('Speed', [{'value': speed, 'label': 'Speed'}])
+    line_chart = line_chart.render_data_uri()
+
+    return render_template('statists.html', title='Statists', pie_chart=pie_chart, line_chart=line_chart)
 
 
 # --------------------------------------------------------------------- Test page

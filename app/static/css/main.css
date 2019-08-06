@@ -129,6 +129,13 @@ img.training_image {
     top: 3rem;
     margin-bottom: 5rem;
     }
+
+/*-------------------------------------------------- Charts*/
+.chart {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    }
+
 /*-------------------------------------------------- Footer*/
 .footer-container {
     background-color: #4c4c4c;
