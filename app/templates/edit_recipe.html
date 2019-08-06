@@ -76,11 +76,11 @@
                 </div>
 
                 <div class="row">
-                    <div class="input-field col s12">
+                    <div class="col s12">
                         <label>Update Allergens</label>
                         <br>
                         <p>
-                         <span>
+                            <span>
                                 <input id="cereals" type="checkbox" name="allergens" value="cereals">
                                 <label for="cereals">Cereals</label>
                             </span>
@@ -122,7 +122,7 @@
                 <br>
                                                                                 <!-- Difficulty -->
                 <div class="row">
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m4">
                         <select name="difficulty" required>
                             <option value="{{ recipe.difficulty.title() }}" disabled selected>{{ recipe.difficulty.title() }}</option>
                             <option value="easy">Easy</option>
@@ -133,7 +133,7 @@
                     </div>
 
                                                                                 <!-- Meal Time -->
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m4">
 
                         <select name="meal_time" required>
                             <option value="{{ recipe.meal_time.title() }}" disabled selected>{{ recipe.meal_time.title() }}</option>
@@ -142,6 +142,12 @@
                             <option value="dinner">Dinner</option>
                         </select>
                         <label>Meal Time</label>
+                    </div>
+
+                                                                            <!-- Rating -->
+                    <div class="input-field col s12 m4">
+                        <input id="rating" type="text" name="rating" value="{{ recipe.rating }}">
+                        <label for="rating">Rate this recipe</label>
                     </div>
                 </div>
 

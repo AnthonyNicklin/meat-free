@@ -145,6 +145,7 @@ def insert_recipe():
     recipe = mongo.db.recipes
 
     if request.method == "POST":
+        upvote_default = 0
         ingredients = request.form.getlist('ingredient')        # Collected data and store into arrays
         allergens = request.form.getlist('allergens')
         methods = request.form.getlist('method')
@@ -158,6 +159,8 @@ def insert_recipe():
             "serves": request.form["serves"],
             "difficulty": request.form["difficulty"],
             "meal_time": request.form["meal_time"],
+            "rating": request.form["rating"],
+            "upvote": upvote_default,
             "allergens": allergens,
             "ingredients": ingredients,
             "method": methods
@@ -219,6 +222,10 @@ def update_recipe(recipe_id):
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
                                 {"$set": {"meal_time": request.form.get("meal_time")}})
 
+    if request.form.get("rating") != recipe["rating"]:
+        mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
+                                    {"$set": {"rating": request.form.get("rating")}})
+
     if request.form.get("ingredient") is not None:
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
                                 {"$set": {"ingredient": request.form.getlist("ingredient")}})  # Not working. Not detecting values.
@@ -245,6 +252,19 @@ def delete_recipe(recipe_id):
 
     return redirect(url_for('recipes'))
 
+# --------------------------------------------------------------------- Upvotes
+@app.route('/upvote/<recipe_id>', methods=['GET', 'POST'])
+def upvote(recipe_id):
+    """ Increment upvote for the recipe """
+
+    # Get recipe by ID to pass back to return
+    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
+
+    # Increment the upvotes by one
+    mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},
+                                {"$inc": {"upvotes": 1}})
+
+    return render_template('recipe_detail.html', recipe=recipe)
 
 # --------------------------------------------------------------------- Ratings High
 @app.route('/rating_high')

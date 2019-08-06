@@ -59,7 +59,7 @@
                                                                         <!-- Allergens -->
                 <div class="row">
 
-                    <div class="input-field col s12">
+                    <div class="col s12">
                         <label>Allergens</label>
                         <br>
                         <p>
@@ -105,7 +105,7 @@
                 <br>
                                                                                 <!-- Difficulty -->
                 <div class="row">
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m4">
                         <select name="difficulty" required>
                             <option value="difficulty" disabled selected>Select Difficulty</option>
                             <option value="easy">Easy</option>
@@ -116,7 +116,7 @@
                     </div>
 
                                                                             <!-- Meal Time -->
-                    <div class="input-field col s12 m6">
+                    <div class="input-field col s12 m4">
                         <select name="meal_time" required>
                             <option value="meal_time" disabled selected>Meal Time</option>
                             <option value="breakfast">Breakfast</option>
@@ -124,6 +124,12 @@
                             <option value="dinner">Dinner</option>
                         </select>
                         <label>Meal Time</label>
+                    </div>
+
+                                                                            <!-- Rating -->
+                    <div class="input-field col s12 m4">
+                        <input id="rating" type="text" name="rating">
+                        <label for="rating">Rate this recipe</label>
                     </div>
                 </div>
 
