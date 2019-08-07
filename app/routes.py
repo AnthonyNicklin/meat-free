@@ -160,7 +160,7 @@ def insert_recipe():
             "difficulty": request.form["difficulty"],
             "meal_time": request.form["meal_time"],
             "rating": request.form["rating"],
-            "upvote": upvote_default,
+            "upvotes": upvote_default,
             "allergens": allergens,
             "ingredients": ingredients,
             "method": methods
@@ -256,14 +256,9 @@ def delete_recipe(recipe_id):
 def upvote(recipe_id):
     """ Increment upvote for the recipe """
 
-    # Get recipe by ID to pass back to return
-    recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-
-    # Increment the upvotes by one
     mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},
                                 {"$inc": {"upvotes": 1}})
-
-    return render_template('recipe_detail.html', recipe=recipe)
+    return redirect(url_for('recipes'))
 
 # --------------------------------------------------------------------- Ratings High
 @app.route('/rating_high')
@@ -397,7 +392,7 @@ def statistics():
 
     # Build pie chart
     pie_chart = Pie()
-    pie_chart.title = 'Meal Times'
+    pie_chart.title = 'Meal-times'
     pie_chart.add('Breakfast', breakfast)
     pie_chart.add('Lunch', lunch)
     pie_chart.add('Dinner', dinner)
