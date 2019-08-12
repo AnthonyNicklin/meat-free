@@ -2,7 +2,7 @@
 
 {% block landing %}
 
-<div id="test-landing" style="background:url(/static/images/mushrooms.jpg) center / cover no-repeat;"></div>
+<div id="landing-picture" style="background:url(/static/images/mushrooms.jpg) center / cover no-repeat;"></div>
 
 {% endblock %}
 
@@ -14,15 +14,17 @@
 
 <div class="row">
     <div class="col s12 center-align">
-        <h4>Welcome {{ session.name.title() }}</h4>
+        <h3>Welcome {{ session.name.title() }}</h3>
 
-        <p>The revolution has started! More and more athletes from ultra-marathon runners to elite cross-fit competitors
+        <p>The revolution has started!</p>
+
+        <p>More and more athletes from ultra-marathon runners to elite cross-fit competitors
         are turning to plant base diets in order to improve all aspects of their fitness.</p>
 
-        <p>Click on a training type see a selection of vegetarian recipes you can cook up yourself.</p>
+        <p>Click on a training type see to a selection of vegetarian recipes you can cook up yourself.</p>
 
         <p>Don't forget if you have any recipes that you wish to share then please don't be afraid to add to our
-            every growing community.</p>
+            every growing collection of amazing meat-free recipes.</p>
 
     </div>
 </div>
@@ -60,91 +62,5 @@
         </a>
     </div>
 </div>
-
-
-    <!--        <div class="row">-->
-    <!--            <div class="col s12 m6">-->
-    <!--                <div class="card medium">-->
-
-    <!--                    <div class="card-image">-->
-    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/runners.jpg') }}"-->
-    <!--                             alt="Runners">-->
-    <!--                        <span class="card-title training-title">Endurance</span>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-content">-->
-    <!--                        <p>Increase your endurance with recipes to help recover from them long sessions or, fuel up-->
-    <!--                        ready for the next one.</p>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-action">-->
-    <!--                    <a href="#">Endurance</a>-->
-    <!--                    </div>-->
-
-    <!--                </div>-->
-    <!--            </div>-->
-
-    <!--            <div class="col s12 m6">-->
-    <!--                <div class="card medium">-->
-
-    <!--                    <div class="card-image">-->
-    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/workout.jpg') }}" alt="Gym">-->
-    <!--                        <span class="card-title training-title">Strength</span>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-content">-->
-    <!--                        <p>Lift heavy or got home! With these recipes your be breaking PBs all day long.</p>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-action">-->
-    <!--                    <a href="#">Strength</a>-->
-    <!--                    </div>-->
-
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--        &lt;!&ndash;./row&ndash;&gt;-->
-
-    <!--        <div class="row">-->
-    <!--            <div class="col s12 m6">-->
-    <!--                <div class="card medium">-->
-
-    <!--                    <div class="card-image">-->
-    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/boy.jpg') }}" alt="Man diving">-->
-    <!--                        <span class="card-title training-title">Power</span>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-content">-->
-    <!--                        <p>Eating the correct food with help you gain power to increase overall fitness and strength-->
-    <!--                        in all your workouts and training sessions.</p>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-action">-->
-    <!--                    <a href="#">Power</a>-->
-    <!--                    </div>-->
-
-    <!--                </div>-->
-    <!--            </div>-->
-
-    <!--            <div class="col s12 m6">-->
-    <!--                <div class="card medium">-->
-
-    <!--                    <div class="card-image">-->
-    <!--                        <img class="training_image" src="{{ url_for ('static', filename='images/athletics.jpg') }}" alt="Athlete running">-->
-    <!--                        <span class="card-title training-title">Speed</span>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-content">-->
-    <!--                        <p>Can't catch this.... Get better times on the track with amazing recipes!</p>-->
-    <!--                    </div>-->
-
-    <!--                    <div class="card-action">-->
-    <!--                    <a href="#">Speed</a>-->
-    <!--                    </div>-->
-
-    <!--                </div>-->
-    <!--            </div>-->
-    <!--        </div>-->
-    <!--        &lt;!&ndash;./row &ndash;&gt;-->
 
 {% endblock %}

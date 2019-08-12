@@ -3,7 +3,7 @@
 {% block content %}
 
 <br>
-<h1>{{ title }}</h1>
+<h1 class="page-title training-type-title">{{ title.upper() }}</h1>
 {% for rec in recipe %}
 
 <div class="row">
@@ -38,8 +38,8 @@
 
                 <div class="row">
                      <div class="center-align col s12">
-                         <p class="detail_link"><a href="{{ url_for('recipe_detail', recipe_id=rec._id) }}">
-                             Click for full recipe</a></p>
+                         <p class="detail_link mountain_font"><a href="{{ url_for('recipe_detail', recipe_id=rec._id) }}">
+                             <b>CLICK FOR FULL RECIPE</b></a></p>
                      </div>
                 </div>
 

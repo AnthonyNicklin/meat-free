@@ -1,10 +1,9 @@
 from pygal import Pie, Bar
-
-from app import app
-from flask import render_template, request, session, url_for, redirect, flash
 from bson.objectid import ObjectId
 
-from app import mongo
+from flask import render_template, request, session, url_for, redirect, flash
+
+from app import app, mongo
 
 
 # --------------------------------------------------------------------- Login page
@@ -32,7 +31,8 @@ def login():
         session['name'] = name
         return redirect(url_for('get_types'))
     else:
-        flash("Username '{}' not found or invalid. Please try again or create an account by clicking on 'Sign Up'".format(request.form['username']))
+        flash("Username '{}' not found or invalid. Please try again or create an account by clicking on "
+              "'Sign Up'".format(request.form['username']))
         return redirect('index')
 
 
@@ -60,8 +60,9 @@ def create_user():
         if users.find_one({"username": user_details["username"]}) is None:
             users.insert_one(user_details)
             session['username'] = user_details['username']
-            session['first-name'] = user_details['first-name']
-            return redirect(url_for('recipes'))
+            name = user_details['first-name'].title()
+            session['name'] = name
+            return redirect(url_for('get_types'))
         else:
             flash("'{}' has already been taken. Please try another username".format(user_details['username']))
             return redirect(url_for('sign_up'))
@@ -80,6 +81,7 @@ def get_types():
     """ Display training types """
 
     return render_template('get_types.html', title='Training Types')
+
 
 # --------------------------------------------------------------------- Recipes
 @app.route('/recipes')
@@ -227,7 +229,7 @@ def update_recipe(recipe_id):
 
     if request.form.get("ingredient") is not None:
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
-                                {"$set": {"ingredient": request.form.getlist("ingredient")}})  # Not working. Not detecting values.
+                                {"$set": {"ingredient": request.form.getlist("ingredient")}})
 
     if request.form.get("method") is not None:
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
