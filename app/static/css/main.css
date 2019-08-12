@@ -1,12 +1,24 @@
 /* ------------------------------------------------- General */
-.background {
-    background-color: #eeeeee;
-    height: 100%;
-    width: 100%;
+@import url('https://fonts.googleapis.com/css?family=Mountains+of+Christmas&display=swap');
+
+.mountain_font {
+    font-family: 'Mountains of Christmas', cursive;
+     }
+
+html,
+body {
+   color: #47525E;
+   margin: 0;
+   padding: 0;
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+   background-color: #eeeeee;
+   width: 100%;
     }
 
-html {
-    color: ##47525E;
+main {
+    flex: 1 0 auto;
     }
 
 h1 {
@@ -14,12 +26,28 @@ h1 {
     padding-left: 1rem;
     }
 
+p {
+    font-size: 18px;
+    }
+
+.text-orange {
+    color: #FF9052;
+    }
+
 .waves-effect.waves-orange {
     background-color: #FF9052;
     }
+
 .waves-effect.waves-red {
     background-color: #EF6666;
     }
+
+.waves-effect.waves-yellow {
+    background-color: #FFB96C;
+    }
+
+a {
+    color: #FF9052 }
 
 a.btn {
     color: white;
@@ -31,6 +59,17 @@ a.btn {
 
 .material-icons.black {
     color: #000000;
+    }
+
+.row {
+    margin-bottom: 0px;
+    }
+
+/* ------------------------------------------------- Background colour */
+.bg-light-green {
+    background-color: #eeeeee;
+    width: 100%;
+    height: 100%;
     }
 
 /* ------------------------------------------------- Navigation */
@@ -53,22 +92,114 @@ img.brand {
 
 /* ------------------------------------------------- Logo */
 img#logo-login {
-    width: 25rem;
+    width: 5.5rem;
+    display: inline-block;
+    }
+
+h1.logo-header {
+    display: inline-block;
+    padding-left: 0rem;
+    }
+
+.logo-container {
+    margin-top: 2rem;
+    }
+
+/* ------------------------------------------------- Landing Picture */
+#landing-picture {
+    width: 100%;
+    height: 25rem;
+    transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    -webkit-transition: all .3s ease-in-out;
+    -o-transition: all .3s ease-in-out;
+    }
+
+/*-------------------------------------------------- Pages*/
+.page-title {
+    margin-top: 1.5rem;
+    text-align: center;
+    }
+
+.training-type-title {
+    margin-bottom: 0rem;
     }
 
 /* ------------------------------------------------- Cards */
 .recipe_details {
     display: inline-block;
+    margin-bottom: 1rem;
     }
 
-p>.detail_link a {
-    color: #FF9052;
+p.detail_link {
+    font-size: 20px;
+    text-shadow: 1px 1px #696969
     }
 
 img.recipe_image {
     width: 18rem;
     }
 
+img.training_image {
+    height: 250px;
+    }
+
 .card-panel: {
     margin-top: 0rem;
     }
+
+.training-title {
+    padding: 4.5rem;
+    color: #FF9052;
+    text-shadow: 1px 1px #696969
+    }
+
+.card {
+    top: 3rem;
+    margin-bottom: 5rem;
+    }
+
+/*-------------------------------------------------- Charts*/
+.chart {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    }
+
+/*-------------------------------------------------- Sort Bar*/
+#sort-bar {
+    background-color: #ffffff;
+    padding: 1rem;
+    }
+
+/*-------------------------------------------------- Footer*/
+.footer-container {
+    background-color: #4c4c4c;
+    padding: 15px;
+    text-align: center;
+    }
+
+.copyright a {
+    color: #fff;
+    }
+
+.social-links a {
+    color: #fff;
+    font-size: 20px;
+    padding: 5px 5px 5px 5px;
+    text-decoration: none;
+    }
+
+.social-links a .fa-facebook-f:hover {
+    color: #3b5998;
+    }
+
+.social-links a .fa-instagram:hover {
+    color: #833AB4;
+    }
+
+.social-links a .fa-twitter:hover {
+    color: #1da1f2;
+    }
+
+/*-------------------------------------------------- Media Queries*/
+

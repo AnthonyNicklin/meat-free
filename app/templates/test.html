@@ -1,91 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Meat Free cookbook for athletes">
-    <meta name="keywords" content="Meat Free">
-    <meta name="author" content="Anthony Nicklin">
-    <meta name="veiwpoint" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <!--Fontawesome CDN-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--GoogleFonts-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Custom CSS-->
-    <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}">
-
-    <title>
-    {% if title %}
-      {{ title }} | Meat Free{% else %} Welcome to Meet Free
-    {% endif %}
-    </title>
-
-</head>
-
-<body>
-
-<header>
-    <div class="navbar-fixed">
-        <nav>
-            <div class="nav-wrapper">
-                <a href="{{ url_for('index') }}" class="brand-logo">
-                    <img class="brand" src="{{ url_for ('static', filename='images/meat_free_logo_green.png') }}" alt="Meat Free Logo">
-                </a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-
-                <ul class="right hide-on-med-and-down">
-                    <li class="mx-2"><a href="{{ url_for('recipes') }}">Recipes</a></li>
-                    <li class="mx-2"><a href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
-                    <li class="mx-2"><a href="#">Statists</a></li>
-                    <li class="mx-2"><a href="{{ url_for('logout') }}">Logout</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                    <li class="mx-2"><a href="{{ url_for('recipes') }}">Recipes</a></li>
-                    <li class="mx-2"><a href="{{ url_for('add_recipe') }}">Add Recipes</a></li>
-                    <li class="mx-2"><a href="#">Statists</a></li>
-                    <li class="mx-2"><a href="{{ url_for('logout') }}">Logout</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
-</header>
-
-<!--End of header and Navigation-->
+{% extends 'base.html' %}
 
 {% block content %}
-<div class="background">
-    <div class="container">
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-            <div class="alert alert-info" role="alert">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-        {% endwith %}
-    </div>
-</div>
+
+<br>
+<br>
+<br>
+<br>
+<span>
+    <input id="cereals" type="checkbox" name="allergens" value="cereals">
+    <label for="cereals">Cereals</label>
+</span>
+
 {% endblock %}
 
-    <!-- Scripts -->
-    <!--JQuery-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <!-- Compiled and minified JavaScript -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
-    <script>
-        $(document).ready(function(){
-            $(".dropdown-trigger").dropdown({ constrainWidth: false });
-            $('.collapsible').collapsible();
-            $('select').material_select();
-            $(".button-collapse").sideNav();
-        });
-    </script>
-    <!-- Custom JS -->
-    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
-</body>
-</html>

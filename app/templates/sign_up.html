@@ -27,73 +27,63 @@
 
 </head>
 
+<body>
 
-<header>
+    <main>
+        <div class="bg-light-green">
+            <div class="container">
+                <div class="row">
+                    <div class="col s12">
 
-    <nav class="bg-green">
-        <div class="nav-wrapper">
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li class="nav-item mx-2">
-                    <a href="{{ url_for('index') }}">Login</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-    <!--End of header and Navigation-->
-
-</header>
-
-<div class="background">
-    <div class="container">
-        <div class="row">
-            <div class="col s12">
-
-                <div class="center-align">
-                    <img id="logo-login" src="{{ url_for ('static', filename='images/meat_free_logo_grey.png') }}" alt="Meat Free Logo">
-                </div>
-
-                <div class="card-panel">
-
-                    <form action="{{ url_for('create_user') }}" method="POST">
-                        <h1 class="center-align">Sign Up</h1>
-                        <p class="center-align">Create an account so you can view and add amazing meat-free recipes!</p>
-
-                        <div class="row">
-                            <div class="form-group col s6">
-                                <label for="first-name">First Name</label>
-                                <input type="text" class="form-control" id="first-name" name="first-name" aria-describedby="firstName" placeholder="First Name">
-                            </div>
-                            <div class="form-group col s6">
-                                <label for="last-name">Last Name</label>
-                                <input type="text" class="form-control" id="last-name" name="last-name" aria-describedby="lastName" placeholder="Last Name">
-                            </div>
+                        <div class="center-align logo-container">
+                            <span><img id="logo-login" src="{{ url_for ('static', filename='images/carrot_logo.png') }}" alt="Meat Free Logo"></span>
+                            <span><h1 class="mountain_font logo-header">Meat Free</h1></span>
                         </div>
 
+                        <div class="card-panel">
 
-                        <div class="row">
-                            <div class="form-group col s12">
-                                <label for="username">Username</label>
-                                <input type="text" class="form-control validate" id="username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
-                            </div>
+                            <form action="{{ url_for('create_user') }}" method="POST">
+                                <h1 class="center-align">Sign Up</h1>
+                                <p class="center-align">Create an account so you can view and add amazing meat-free recipes!</p>
+
+                                <div class="row">
+                                    <div class="form-group col s6">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" class="form-control" id="first-name" name="first-name" aria-describedby="firstName" placeholder="First Name">
+                                    </div>
+                                    <div class="form-group col s6">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" class="form-control" id="last-name" name="last-name" aria-describedby="lastName" placeholder="Last Name">
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group col s12">
+                                        <label for="username">Username</label>
+                                        <input type="text" class="form-control validate" id="username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
+                                    </div>
+                                </div>
+
+                                <button type="submit" class="waves-effect waves-orange btn">Submit</button>
+                                <p>Already have an account? Please <a href="{{ url_for ('index') }}"> Login</a> here.</p>
+
+                            </form>
                         </div>
-
-                        <button type="submit" class="waves-effect waves-orange btn">Submit</button>
-
-                    </form>
+                    </div>
                 </div>
+
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    {% for message in messages %}
+                        <div class="alert alert-info" role="alert">{{ message }}</div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
             </div>
         </div>
-
-    {% with messages = get_flashed_messages() %}
-        {% if messages %}
-            {% for message in messages %}
-                <div class="alert alert-info" role="alert">{{ message }}</div>
-            {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    </div>
-</div>
+    </main>
 
 </body>
 </html>

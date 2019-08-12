@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+
+{% block landing %}
+
+<div id="landing-picture" style="background:url(/static/images/mushrooms.jpg) center / cover no-repeat;"></div>
+
+{% endblock %}
+
+{% block content %}
+
+<br>
+<h1 class="mountain_font text-orange center-align">The Vegetarian Revolution</h1>
+<br>
+
+<div class="row">
+    <div class="col s12 center-align">
+        <h3>Welcome {{ session.name.title() }}</h3>
+
+        <p>The revolution has started!</p>
+
+        <p>More and more athletes from ultra-marathon runners to elite cross-fit competitors
+        are turning to plant base diets in order to improve all aspects of their fitness.</p>
+
+        <p>Click on a training type see to a selection of vegetarian recipes you can cook up yourself.</p>
+
+        <p>Don't forget if you have any recipes that you wish to share then please don't be afraid to add to our
+            every growing collection of amazing meat-free recipes.</p>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m6">
+        <a href="{{ url_for('endurance') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Endurance</h1>
+            </div>
+        </a>
+    </div>
+    <div class="col s12 m6">
+        <a href="{{ url_for('speed') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Speed</h1>
+            </div>
+        </a>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col s12 m6">
+        <a href="{{ url_for('strength') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Strength</h1>
+            </div>
+        </a>
+    </div>
+    <div class="col s12 m6">
+        <a href="{{ url_for('power') }}">
+            <div class="card">
+                <h1 class="mountain_font center-align training-title">Power</h1>
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
