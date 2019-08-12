@@ -2,23 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3280e93f-5538-437e-9d25-4f85071aaf9e" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../meat-free-v1/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../meat-free-v1/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../meat-free-v1/Procfile" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../meat-free-v1/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/../meat-free-v1/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../meat-free-v1/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../meat-free-v1/templates/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/add_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/add_recipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/edit_recipe.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/edit_recipe.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/get_types.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/get_types.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/recipe_training.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/recipe_training.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/recipes.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/recipes.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/statists.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/statists.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirement.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,8 +18,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/routes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="231" column="94" selection-start-line="231" selection-start-column="94" selection-end-line="231" selection-end-column="94" />
+            <state relative-caret-position="3465">
+              <caret line="231" column="93" selection-start-line="231" selection-start-column="93" selection-end-line="231" selection-end-column="93" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -44,7 +31,7 @@
         <entry file="file://$PROJECT_DIR$/Procfile">
           <provider selected="true" editor-type-id="text-editor">
             <state>
-              <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+              <caret column="18" selection-start-column="18" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -62,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/config.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+              <caret line="10" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -199,7 +186,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="23" width="1513" height="938" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25871313" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -417,7 +403,7 @@
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
-          <caret column="18" lean-forward="true" selection-start-column="18" selection-end-column="18" />
+          <caret column="18" selection-start-column="18" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -431,14 +417,14 @@
     <entry file="file://$PROJECT_DIR$/config.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          <caret line="10" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/routes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="231" column="94" selection-start-line="231" selection-start-column="94" selection-end-line="231" selection-end-column="94" />
+        <state relative-caret-position="3465">
+          <caret line="231" column="93" selection-start-line="231" selection-start-column="93" selection-end-line="231" selection-end-column="93" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
