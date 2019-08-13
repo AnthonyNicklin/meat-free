@@ -119,6 +119,7 @@ h1.logo-header {
 .page-title {
     margin-top: 1.5rem;
     text-align: center;
+    text-shadow: 1px 1px #696969
     }
 
 .training-type-title {
@@ -150,7 +151,6 @@ img.training_image {
 
 .training-title {
     padding: 4.5rem;
-    color: #FF9052;
     text-shadow: 1px 1px #696969
     }
 
