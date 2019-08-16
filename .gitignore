@@ -1,5 +1,4 @@
 __pycache__/
-config.py
 venv/
-.ideas
-.DS_Store
+.ideas/
+.DS_Store/
