@@ -4,7 +4,7 @@
 
 <br>
 
-<h1 class="page-title mountain_font text-orange">RECIPES</h1>
+<h1 class="page-title mountain_font text-orange">{{ title.upper() }}</h1>
 
 <div class="row">
 
@@ -16,14 +16,14 @@
 
         <!-- Dropdown Structure -->
         <ul id='sortby-dropdown' class='dropdown-content'>
-            <li><a href="{{ url_for('upvotes_high') }}">Most Upvotes</a></li>
-            <li><a href="{{ url_for('upvotes_low') }}">Least Upvotes</a></li>
+            <li><a href="{{ url_for('sort_by', field='upvotes', high_low='high') }}">Most Upvotes</a></li>
+            <li><a href="{{ url_for('sort_by', field='upvotes', high_low='low') }}">Least Upvotes</a></li>
             <li class="divider"></li>
-            <li><a href="{{ url_for('rating_high') }}">Highest Rated</a></li>
-            <li><a href="{{ url_for('rating_low') }}">Lowest Rated</a></li>
+            <li><a href="{{ url_for('sort_by', field='rating', high_low='high') }}">Highest Rated</a></li>
+            <li><a href="{{ url_for('sort_by', field='rating', high_low='low') }}">Lowest Rated</a></li>
             <li class="divider"></li>
-            <li><a href="{{ url_for('time_high') }}">Quick to make</a></li>
-            <li><a href="{{ url_for('time_low') }}">Bit longer to make</a></li>
+            <li><a href="{{ url_for('sort_by', field='time_to_make', high_low='high') }}">Long Cooking</a></li>
+            <li><a href="{{ url_for('sort_by', field='time_to_make', high_low='low') }}">Quick Cooking</a></li>
         </ul>
     </div>
 
@@ -35,10 +35,10 @@
 
         <!-- Dropdown Structure -->
         <ul id='training-dropdown' class='dropdown-content'>
-            <li><a href="{{ url_for('sort_endurance') }}">Endurance</a></li>
-            <li><a href="{{ url_for('sort_speed') }}">Speed</a></li>
-            <li><a href="{{ url_for('sort_power') }}">Power</a></li>
-            <li><a href="{{ url_for('sort_strength') }}">Strength</a></li>
+            <li><a href="{{ url_for('recipes', field='training_type', type='endurance') }}">Endurance</a></li>
+            <li><a href="{{ url_for('recipes', field='training_type', type='speed') }}">Speed</a></li>
+            <li><a href="{{ url_for('recipes', field='training_type', type='power') }}">Power</a></li>
+            <li><a href="{{ url_for('recipes', field='training_type', type='strength') }}">Strength</a></li>
         </ul>
     </div>
 
@@ -50,9 +50,9 @@
 
         <!-- Dropdown Structure -->
         <ul id='meal-dropdown' class='dropdown-content'>
-            <li><a href="{{ url_for('sort_breakfast') }}">Breakfast</a></li>
-            <li><a href="{{ url_for('sort_lunch') }}">Lunch</a></li>
-            <li><a href="{{ url_for('sort_dinner') }}">Dinner</a></li>
+            <li><a href="{{ url_for('recipes', field='meal_time', type='breakfast') }}">Breakfast</a></li>
+            <li><a href="{{ url_for('recipes', field='meal_time', type='lunch') }}">Lunch</a></li>
+            <li><a href="{{ url_for('recipes', field='meal_time', type='dinner') }}">Dinner</a></li>
         </ul>
     </div>
 

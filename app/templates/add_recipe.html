@@ -156,15 +156,16 @@
 
                 </div>
 
-                <button class="btn waves-effect waves-orange" type="submit">Add Recipe
-                    <i class="material-icons right">playlist_add</i>
-                </button>
+                <div class="form-bottoms">
+                    <button class="btn waves-effect waves-orange" type="submit">Add Recipe
+                        <i class="material-icons right">playlist_add</i>
+                    </button>
 
 
-                <a href="{{ url_for('recipes') }}" class="btn waves-effect waves-orange reset-btn">Cancel
-                    <i class="material-icons right">clear_all</i>
-                </a>
-
+                    <a href="{{ url_for('recipes', field='recipes', type='all') }}" class="btn waves-effect waves-orange reset-btn">Cancel
+                        <i class="material-icons right">clear_all</i>
+                    </a>
+                </div>
 
             </form>
         </div>

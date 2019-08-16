@@ -31,14 +31,14 @@
 
 <div class="row">
     <div class="col s12 m6">
-        <a href="{{ url_for('endurance') }}">
+        <a href="{{ url_for('recipes', field='training_type', type='endurance') }}">
             <div class="card">
                 <h1 class="mountain_font center-align training-title">Endurance</h1>
             </div>
         </a>
     </div>
     <div class="col s12 m6">
-        <a href="{{ url_for('speed') }}">
+        <a href="{{ url_for('recipes', field='training_type', type='speed') }}">
             <div class="card">
                 <h1 class="mountain_font center-align training-title">Speed</h1>
             </div>
@@ -48,14 +48,14 @@
 
 <div class="row">
     <div class="col s12 m6">
-        <a href="{{ url_for('strength') }}">
+        <a href="{{ url_for('recipes', field='training_type', type='strength') }}">
             <div class="card">
                 <h1 class="mountain_font center-align training-title">Strength</h1>
             </div>
         </a>
     </div>
     <div class="col s12 m6">
-        <a href="{{ url_for('power') }}">
+        <a href="{{ url_for('recipes', field='training_type', type='power') }}">
             <div class="card">
                 <h1 class="mountain_font center-align training-title">Power</h1>
             </div>

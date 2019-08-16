@@ -84,12 +84,27 @@ def get_types():
 
 
 # --------------------------------------------------------------------- Recipes
-@app.route('/recipes')
-def recipes():
+@app.route('/recipes/<field>/<type>')
+def recipes(field, type):
     """ Render template displaying all recipes in a summarised view from 'recipes' collection """
 
-    recipe = mongo.db.recipes.find()
-    return render_template('recipes.html', title='Recipes', recipes=recipe)
+    if field and type:
+        if field == 'training_type':
+            training_type = {'training_type': type}
+
+            recipe = mongo.db.recipes.find(training_type)
+            return render_template('recipes.html', recipes=recipe, title=type)
+        elif field == 'meal_time':
+            meal_time = {'meal_time': type}
+
+            recipe = mongo.db.recipes.find(meal_time)
+            return render_template('recipes.html', recipes=recipe, title=type)
+        else:
+            recipe = mongo.db.recipes.find()
+            return render_template('recipes.html', title='Recipes', recipes=recipe)
+    else:
+        recipe = mongo.db.recipes.find()
+        return render_template('recipes.html', title='Recipes', recipes=recipe)
 
 # --------------------------------------------------------------------- Recipe detail
 @app.route('/recipe_detail/<recipe_id>')
@@ -99,45 +114,13 @@ def recipe_detail(recipe_id):
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
     return render_template('recipe_detail.html', recipe=recipe)
 
-
-# --------------------------------------------------------------------- Types
-@app.route('/endurance')
-def endurance():
-    """ Get all recipes with training type of 'endurance' from recipes collection """
-
-    recipe = mongo.db.recipes.find({"training_type": "endurance"})
-    return render_template('recipe_training.html', recipe=recipe, title="Endurance")
-
-
-@app.route('/power')
-def power():
-    """ Get all recipes with training type of 'power' from recipes collection """
-
-    recipe = mongo.db.recipes.find({"training_type": "power"})
-    return render_template('recipe_training.html', recipe=recipe, title="Power")
-
-
-@app.route('/strength')
-def strength():
-    """ Get all recipes with training type of 'strength' from recipes collection """
-
-    recipe = mongo.db.recipes.find({"training_type": "strength"})
-    return render_template('recipe_training.html', recipe=recipe, title="Strength")
-
-
-@app.route('/speed')
-def speed():
-    """ Get all recipes with training type of 'speed' from recipes collection """
-
-    recipe = mongo.db.recipes.find({"training_type": "speed"})
-    return render_template('recipe_training.html', recipe=recipe, title="Speed")
-
 # --------------------------------------------------------------------- Add recipe form
 @app.route('/add_recipe')
 def add_recipe():
     """ Render template displaying form to add new recipe """
 
     return render_template('add_recipe.html', title='Add Recipe')
+
 
 # --------------------------------------------------------------------- Insert recipe
 @app.route('/insert_recipe', methods=["GET", "POST"])
@@ -169,7 +152,7 @@ def insert_recipe():
         }
         recipe.insert_one(recipe_details)
 
-        return redirect(url_for('recipes'))
+        return redirect(url_for('recipes', option='all' ))
 
 # --------------------------------------------------------------------- Edit recipe
 @app.route('/edit_recipe/<recipe_id>')
@@ -235,7 +218,7 @@ def update_recipe(recipe_id):
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
                                 {"$set": {"method": request.form.getlist("method")}})
 
-    return redirect(url_for('recipes'))
+    return redirect(url_for('recipe_detail', recipe_id=recipe_id))
 
 # --------------------------------------------------------------------- Delete recipes
 @app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
@@ -251,7 +234,7 @@ def delete_recipe(recipe_id):
     # Let the user know the recipe has been deleted
     flash("'{}' was successfully deleted.".format(recipe_to_delete['name_of_recipe'].title()))
 
-    return redirect(url_for('recipes'))
+    return redirect(url_for('recipes', option='all'))
 
 # --------------------------------------------------------------------- Upvotes
 @app.route('/upvote/<recipe_id>', methods=['GET', 'POST'])
@@ -260,123 +243,23 @@ def upvote(recipe_id):
 
     mongo.db.recipes.update_one({"_id": ObjectId(recipe_id)},
                                 {"$inc": {"upvotes": 1}})
-    return redirect(url_for('recipes'))
+    return redirect(url_for('recipe_detail', recipe_id=recipe_id))
 
-# --------------------------------------------------------------------- Ratings High
-@app.route('/rating_high')
-def rating_high():
+# --------------------------------------------------------------------- High/Low
+@app.route('/sort_by/<field>/<high_low>')
+def sort_by(field, high_low):
     """ Display recipes with the highest ratings to the lowest """
 
-    recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'rating': -1}})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Ratings Low
-@app.route('/rating_low')
-def rating_low():
-    """ Display recipes with the lowest ratings to the highest """
-
-    recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'rating': 1}})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Upvotes High
-@app.route('/upvotes_high')
-def upvotes_high():
-    """ Display recipes with the highest upvotes to the lowest """
-
-    recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'upvotes': -1}})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Upvotes Low
-@app.route('/upvotes_low')
-def upvotes_low():
-    """ Display recipes with the lowest upvotes to the highest """
-
-    recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'upvotes': 1}})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Time quickest
-@app.route('/time_low')
-def time_low():
-    """ Display recipes with the quickest time to make first """
-
-    recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'time_to_make': -1}})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Time longest
-@app.route('/time_high')
-def time_high():
-    """ Display recipes with the longest time to make first """
-
-    recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {'time_to_make': 1}})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Sort Endurance
-@app.route('/sort_endurance')
-def sort_endurance():
-    """ Display recipes with training type Endurance """
-
-    recipe = mongo.db.recipes.find({"training_type": 'endurance'})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Sort Speed
-@app.route('/sort_speed')
-def sort_speed():
-    """ Display recipes with training type Speed """
-
-    recipe = mongo.db.recipes.find({"training_type": 'speed'})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Sort Power
-@app.route('/sort_power')
-def sort_power():
-    """ Display recipes with training type Power """
-
-    recipe = mongo.db.recipes.find({"training_type": 'power'})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Sort Strength
-@app.route('/sort_strength')
-def sort_strength():
-    """ Display recipes with training type Strength """
-
-    recipe = mongo.db.recipes.find({"training_type": 'strength'})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Sort Breakfast
-@app.route('/sort_breakfast')
-def sort_breakfast():
-    """ Display recipes with meal-time of breakfast """
-
-    recipe = mongo.db.recipes.find({"meal_time": 'breakfast'})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Sort Lunch
-@app.route('/sort_lunch')
-def sort_lunch():
-    """ Display recipes with meal-time of lunch """
-
-    recipe = mongo.db.recipes.find({"meal_time": 'lunch'})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
-
-
-# --------------------------------------------------------------------- Sort Dinner
-@app.route('/sort_dinner')
-def sort_dinner():
-    """ Display recipes with meal-time of dinner """
-
-    recipe = mongo.db.recipes.find({"meal_time": 'dinner'})
-    return render_template('recipes.html', recipes=recipe, title='Recipes')
+    if field:
+        if high_low == 'high':
+            value = -1
+        elif high_low == 'low':
+            value = 1
+        recipe = mongo.db.recipes.find({'$query': {}, '$orderby': {field: value}})
+        return render_template('recipes.html', recipes=recipe, title='Recipes')
+    else:
+        flash('Ooops, looks that we could not process your request.')
+        return redirect(url_for('recipes', field='recipes', type='all'))
 
 
 # --------------------------------------------------------------------- statistics
