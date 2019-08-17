@@ -132,6 +132,12 @@ h1.logo-header {
 #sign_up {
     display: none;
     }
+
+/* ------------------------------------------------- Add and edit form */
+.edit {
+    display: none;
+    }
+
 /* ------------------------------------------------- Cards */
 .recipe_details {
     display: inline-block;
