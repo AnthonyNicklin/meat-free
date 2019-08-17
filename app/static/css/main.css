@@ -129,6 +129,9 @@ h1.logo-header {
     margin-top: 3rem;
     }
 
+#sign_up {
+    display: none;
+    }
 /* ------------------------------------------------- Cards */
 .recipe_details {
     display: inline-block;
