@@ -1,3 +1,4 @@
+import os
 from pygal import Pie, Bar
 from bson.objectid import ObjectId
 
@@ -294,3 +295,8 @@ def statistics():
 
     return render_template('statists.html', title='Statists', pie_chart=pie_chart, line_chart=line_chart)
 
+
+if __name__ == '__main__':
+    port = int( os.getenv("PORT") )
+    host = os.getenv("IP")
+    app.run(host=host, port=port)
