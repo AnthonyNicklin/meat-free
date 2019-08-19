@@ -294,27 +294,3 @@ def statistics():
 
     return render_template('statists.html', title='Statists', pie_chart=pie_chart, line_chart=line_chart)
 
-
-# # --------------------------------------------------------------------- Test page
-# @app.route('/test/edit_recipe')
-# def test():
-#     """ Test page for styling remove before deploying! """
-#
-#     recipe = mongo.db.recipes.find_one({'_id': ObjectId('5d285162e5cd3109c379f050')})
-#     return render_template('test.html', recipe=recipe, title='Edit Recipe')
-#
-# # --------------------------------------------------------------------- Copy Add recipe form
-# @app.route('/test/add_recipe')
-# def add_recipe():
-#     """ Copy """
-#
-#     return render_template('test.html', title='Add Recipe')
-#
-#
-# # # --------------------------------------------------------------------- Edit recipe
-# # @app.route('/edit_recipe/<recipe_id>')
-# # def edit_recipe(recipe_id):
-# #     """ Render the edit_recipe page for the recipe to be updated """
-# #
-# #     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-# #     return render_template('edit_recipe.html', recipe=recipe)
