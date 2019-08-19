@@ -1,2 +1,2 @@
-web: flask translate compile; gunicorn meat_free:app
+web: python3 meat_free.py
 
