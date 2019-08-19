@@ -1,4 +1,4 @@
 __pycache__/
-venv/
-.ideas/
+venv
+.idea/
 .DS_Store/
