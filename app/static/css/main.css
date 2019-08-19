@@ -133,6 +133,11 @@ h1.logo-header {
     display: none;
     }
 
+.flask-msg-red {
+  margin-bottom: 0.5rem;
+  color: red;
+  }
+
 /* ------------------------------------------------- Add and edit form */
 .edit {
     display: none;

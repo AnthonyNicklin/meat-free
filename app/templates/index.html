@@ -54,6 +54,16 @@
                                     </div>
                                 </div>
 
+                                <div class="flask-msg-red">
+                                    {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                {{ message }}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endwith %}
+                                </div>
+
                                 <button type="submit" class="waves-effect waves-orange btn">Submit</button>
                                 <p>Don't have an account? Please <a href="javascript:void(0);" id="sign_up_link"> Sign up</a> here.</p>
 
@@ -89,19 +99,21 @@
                                     </div>
                                 </div>
 
+                                 <div class="flask-msg-red">
+                                    {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                {{ message }}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endwith %}
+                                </div>
+
                                 <button type="submit" class="waves-effect waves-orange btn">Submit</button>
                                 <p>Already have an account? Please <a href="javascript:void(0);" id="login_link"> Login</a> here.</p>
 
                             </form>
                         </div>
-
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-info" role="alert">{{ message }}</div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
 
             </div>
         </div>

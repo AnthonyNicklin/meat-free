@@ -33,15 +33,8 @@ def login():
     else:
         flash("Username '{}' not found or invalid. Please try again or create an account by clicking on "
               "'Sign Up'".format(request.form['username']))
-        return redirect('index')
+        return redirect(url_for('index'))
 
-
-# --------------------------------------------------------------------- Sign Up
-@app.route('/sign_up', methods=['GET', 'POST'])
-def sign_up():
-    """ Sign up form """
-
-    return render_template('sign_up.html', title="Sign Up")
 
 # --------------------------------------------------------------------- Create new user
 @app.route('/create_user', methods=['GET', 'POST'])
@@ -65,7 +58,7 @@ def create_user():
             return redirect(url_for('get_types'))
         else:
             flash("'{}' has already been taken. Please try another username".format(user_details['username']))
-            return redirect(url_for('sign_up'))
+            return redirect(url_for('index'))
 
 # --------------------------------------------------------------------- Logout
 @app.route('/logout')
