@@ -1,8 +1,4 @@
 __pycache__/
-venv
-<<<<<<< HEAD
-.idea
-=======
-.idea
->>>>>>> master
+venv/
+.idea/
 .DS_Store/
