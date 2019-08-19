@@ -20,6 +20,10 @@
     <!--Custom CSS-->
     <link rel="stylesheet" href="{{ url_for ('static', filename='css/main.css') }}">
 
+    <!--Favicon-->
+    <link rel="shortcut icon" href="{{ url_for('static', filename='mf-favicon.ico') }}" type="image/x-icon">
+    <link rel="icon" href="{{ url_for('static', filename='mf-favicon.ico') }}" type="image/x-icon">
+
     <title>
     {% if title %}
       {{ title }} | Meat Free{% else %}Welcome to Meet Free
