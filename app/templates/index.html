@@ -3,8 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="description" content="The Monkees fan and booking website">
-    <meta name="keywords" content="The Monkees">
+    <meta name="description" content="Meat Free cookbook for athletes">
+    <meta name="keywords" content="Meat Free">
     <meta name="author" content="Anthony Nicklin">
     <meta name="veiwpoint" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +41,7 @@
                 <div class="row">
                     <div class="col s12">
 
-                        <div class="card-panel">
+                        <div id='login' class="card-panel">
 
                             <form action="{{ url_for('login') }}" method="POST">
                                 <h1 class="center-align">Login</h1>
@@ -49,13 +49,24 @@
 
                                 <div class="row">
                                     <div class="form-group col s12">
-                                        <label for="username">Username</label>
-                                        <input type="text" class="form-control validate" id="username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
+                                        <label for="login_username">Username</label>
+                                        <input type="text" class="form-control validate" id="login_username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
                                     </div>
                                 </div>
 
+                                <div class="flask-msg-red">
+                                    {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                {{ message }}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endwith %}
+                                </div>
+
                                 <button type="submit" class="waves-effect waves-orange btn">Submit</button>
-                                <p>Don't have an account? Please <a href="{{ url_for ('sign_up') }}"> Sign up</a> here.</p>
+                                <p>Don't have an account? Please <a href="javascript:void(0);" id="sign_up_link"> Sign up</a> here.</p>
+
 
                             </form>
 
@@ -63,17 +74,56 @@
                     </div>
                 </div>
 
-                {% with messages = get_flashed_messages() %}
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-info" role="alert">{{ message }}</div>
-                        {% endfor %}
-                    {% endif %}
-                {% endwith %}
+                 <div id='sign_up' class="card-panel">
+
+                            <form action="{{ url_for('create_user') }}" method="POST">
+                                <h1 class="center-align">Sign Up</h1>
+                                <p class="center-align">Create an account so you can view and add amazing meat-free recipes!</p>
+
+                                <div class="row">
+                                    <div class="form-group col s6">
+                                        <label for="first-name">First Name</label>
+                                        <input type="text" class="form-control" id="first-name" name="first-name" aria-describedby="firstName" placeholder="First Name">
+                                    </div>
+                                    <div class="form-group col s6">
+                                        <label for="last-name">Last Name</label>
+                                        <input type="text" class="form-control" id="last-name" name="last-name" aria-describedby="lastName" placeholder="Last Name">
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="form-group col s12">
+                                        <label for="sign_up_username">Username</label>
+                                        <input type="text" class="form-control validate" id="sign_up_username" name="username" aria-describedby="Username" placeholder="Enter a username" required>
+                                    </div>
+                                </div>
+
+                                 <div class="flask-msg-red">
+                                    {% with messages = get_flashed_messages() %}
+                                        {% if messages %}
+                                            {% for message in messages %}
+                                                {{ message }}
+                                            {% endfor %}
+                                        {% endif %}
+                                    {% endwith %}
+                                </div>
+
+                                <button type="submit" class="waves-effect waves-orange btn">Submit</button>
+                                <p>Already have an account? Please <a href="javascript:void(0);" id="login_link"> Login</a> here.</p>
+
+                            </form>
+                        </div>
 
             </div>
         </div>
     </main>
+
+    <!-- Scripts -->
+    <!--JQuery-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for ('static', filename='js/custom.js') }}"></script>
 
 </body>
 </html>

@@ -45,7 +45,7 @@
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul class="right hide-on-med-and-down">
-                        <li><a href="{{ url_for('recipes') }}">RECIPES</a></li>
+                        <li><a href="{{ url_for('recipes', field='recipes', type='all') }}">RECIPES</a></li>
                         <li><a href="{{ url_for('add_recipe') }}">ADD RECIPES</a></li>
                         <li><a href="{{ url_for('statistics') }}">STATISTICS</a></li>
                         <li><a href="{{ url_for('logout') }}">LOGOUT</a></li>
@@ -58,7 +58,7 @@
 
         <!-- Mobile Navbar -->
         <ul class="side-nav" id="mobile-demo">
-            <li><a href="{{ url_for('recipes') }}">RECIPES</a></li>
+            <li><a href="{{ url_for('recipes', field='recipes', type='all') }}">RECIPES</a></li>
             <li><a href="{{ url_for('add_recipe') }}">ADD RECIPES</a></li>
             <li><a href="{{ url_for('statistics') }}">STATISTICS</a></li>
             <li><a href="{{ url_for('logout') }}">LOGOUT</a></li>
@@ -116,6 +116,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <!-- Compiled and minified JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <!-- Custom JS -->
+    <script src="{{ url_for ('static', filename='js/custom.js') }}"></script>
 
 
     <script>
@@ -126,8 +128,6 @@
             $(".button-collapse").sideNav();
         });
     </script>
-    <!-- Custom JS -->
-    <script src="{{ url_for('static', filename='js/custom.js') }}"></script>
 
 </body>
 </html>

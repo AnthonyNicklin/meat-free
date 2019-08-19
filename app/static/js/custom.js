@@ -1,5 +1,17 @@
 $(document).ready(function(){
 
+    $('#sign_up_link').click(function(){
+
+        $('#sign_up').css('display', 'block');
+        $('#login').hide();
+    });
+
+     $('#login_link').click(function(){
+
+        $('#login').show();
+        $('#sign_up').css('display', 'none');
+    });
+
     var x = 1; // Counter for ingredients
     var y = 1; // Counter for method steps
     var maxIngre = 15; // Maximum number of ingredients they can add
@@ -34,4 +46,5 @@ $(document).ready(function(){
     $('#remove_method').click(function(){
         $('.extra_method').last().remove();
     });
+
 });

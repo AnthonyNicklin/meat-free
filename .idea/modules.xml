@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../meat-free-v1/.idea/meat-free.iml" filepath="$PROJECT_DIR$/../meat-free-v1/.idea/meat-free.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ms-3-mf.iml" filepath="$PROJECT_DIR$/.idea/ms-3-mf.iml" />
     </modules>
   </component>
