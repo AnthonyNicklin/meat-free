@@ -108,9 +108,29 @@
             <i class="material-icons right">edit</i>
         </a>
 
-        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-red">Delete
+        <!-- Delete Modal Trigger -->
+        <a href="#modal1" class="btn waves-effect waves-red modal-trigger" data-target="modal1">Delete
             <i class="material-icons right">remove_circle</i>
         </a>
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="modal-content center-align">
+
+                <h4>Are you sure?</h4>
+                <p>If you wish to delete this recipe then please click 'DELETE'.</p>
+                <p>If not, no problem just hit 'CANCEL'.</p>
+                </div>
+                    <div class="modal-footer">
+                    <a href="#" class="modal-close waves-effect waves-green btn-flat">Cancel</a>
+                    <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}"
+                       class="modal-action modal-close waves-effect waves-green btn-flat">Delete</a>
+                </div>
+            </div>
+
+<!--        <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="btn waves-effect waves-red">Delete-->
+<!--            <i class="material-icons right">remove_circle</i>-->
+<!--        </a>-->
 
 </div>
 <!-- ./card-panel -->
