@@ -37,6 +37,11 @@ p {
 a {
     color: #FF9052 }
 
+.btn {
+    margin-top: 1rem;
+    width: 14rem;
+    }
+
 a.btn {
     color: white;
     }
@@ -142,6 +147,7 @@ h1.logo-header {
 .training-type-title {
     margin-bottom: 0rem;
     }
+
 .form-bottoms {
     margin-top: 3rem;
     }
@@ -195,7 +201,7 @@ img.training_image {
     }
 
 /*-------------------------------------------------- Sort Bar*/
-#sort-bar {
+#sort-ba {
     background-color: #ffffff;
     padding: 1rem;
     }
@@ -231,9 +237,9 @@ img.training_image {
     }
 
 /*---------------------------------------------------------------------------------------Media Queries*/
-@media only screen and (min-width: 601px)
+@media (min-width: 992px) {
 
+}
 
-@media only screen and (min-width: 992px)
 
 
