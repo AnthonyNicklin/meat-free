@@ -99,6 +99,14 @@ img.brand {
     width: 10.8rem;
     }
 
+nav .button-collapse i {
+        line-height: 74px;
+        }
+
+nav, nav .nav-wrapper i, nav a.button-collapse, nav a.button-collapse i {
+        font-size: 3rem;
+        }
+
 /* ------------------------------------------------- Logo */
 img#logo-login {
     width: 5.5rem;
@@ -223,12 +231,9 @@ img.training_image {
     }
 
 /*---------------------------------------------------------------------------------------Media Queries*/
-@media (min-width: 992px) {
-    .nav .nav-wrapper i, nav .nav-wrapper i {
-        line-height: 740px
-        }
-    .nav i, nav i.material-icons {
-        font-size: 3rem
-        }
-}
+@media only screen and (min-width: 601px)
+
+
+@media only screen and (min-width: 992px)
+
 
