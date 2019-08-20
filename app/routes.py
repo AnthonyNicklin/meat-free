@@ -163,7 +163,7 @@ def insert_recipe():
         }
         recipe.insert_one(recipe_details)
 
-        return redirect(url_for('recipes', option='all' ))
+        return redirect(url_for('recipes', field='recipes', type='all'))
 
 
 # --------------------------------------------------------------------- Edit recipe
@@ -235,7 +235,7 @@ def update_recipe(recipe_id):
     return redirect(url_for('recipe_detail', recipe_id=recipe_id))
 
 # --------------------------------------------------------------------- Delete recipes
-@app.route('/delete_recipe/<recipe_id>', endpoint='delet_recipe', methods=['GET', 'POST'])
+@app.route('/delete_recipe/<recipe_id>', endpoint='delete_recipe', methods=['GET', 'POST'])
 @login_required
 def delete_recipe(recipe_id):
     """ Delete recipe """
@@ -249,7 +249,7 @@ def delete_recipe(recipe_id):
     # Let the user know the recipe has been deleted
     flash("'{}' was successfully deleted.".format(recipe_to_delete['name_of_recipe'].title()))
 
-    return redirect(url_for('recipes', option='all'))
+    return redirect(url_for('recipes', field='recipes', type='all'))
 
 # --------------------------------------------------------------------- Upvotes
 @app.route('/upvote/<recipe_id>', endpoint='upvote', methods=['GET', 'POST'])
