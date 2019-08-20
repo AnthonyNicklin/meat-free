@@ -3,7 +3,6 @@ cycler==0.10.0
 dnspython==1.16.0
 dominate==2.3.5
 Flask==1.1.1
-flask-paginate==0.5.3
 Flask-PyMongo==2.3.0
 gunicorn==19.9.0
 itsdangerous==1.1.0
