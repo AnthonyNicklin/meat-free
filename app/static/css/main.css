@@ -34,18 +34,6 @@ p {
     color: #FF9052;
     }
 
-.waves-effect.waves-orange {
-    background-color: #FF9052;
-    }
-
-.waves-effect.waves-red {
-    background-color: #EF6666;
-    }
-
-.waves-effect.waves-yellow {
-    background-color: #FFB96C;
-    }
-
 a {
     color: #FF9052 }
 
@@ -63,6 +51,27 @@ a.btn {
 
 .row {
     margin-bottom: 0px;
+    }
+
+/* ------------------------------------------------- Material overrides */
+.material-icons.gold-star {
+    color: #FFD700
+    }
+
+.material-icons.black {
+    color: #000000;
+    }
+
+.waves-effect.waves-orange {
+    background-color: #FF9052;
+    }
+
+.waves-effect.waves-red {
+    background-color: #EF6666;
+    }
+
+.waves-effect.waves-yellow {
+    background-color: #FFB96C;
     }
 
 /* ------------------------------------------------- Background colour */
@@ -137,11 +146,6 @@ h1.logo-header {
   margin-bottom: 0.5rem;
   color: red;
   }
-
-/* ------------------------------------------------- Add and edit form */
-.edit {
-    display: none;
-    }
 
 /* ------------------------------------------------- Cards */
 .recipe_details {
@@ -218,5 +222,13 @@ img.training_image {
     color: #1da1f2;
     }
 
-/*-------------------------------------------------- Media Queries*/
+/*---------------------------------------------------------------------------------------Media Queries*/
+@media (min-width: 992px) {
+    .nav .nav-wrapper i, nav .nav-wrapper i {
+        line-height: 740px
+        }
+    .nav i, nav i.material-icons {
+        font-size: 3rem
+        }
+}
 
