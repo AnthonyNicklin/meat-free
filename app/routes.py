@@ -7,6 +7,18 @@ from flask import render_template, request, session, url_for, redirect, flash
 from app import app, mongo
 
 
+# --------------------------------------------------------------------- Decorators
+def login_required(func):
+    """ Check if the user has logged in """
+
+    def wrapper(**kwargs):
+        if not session.get('name'):
+            flash('Please log in to access this website.')
+            return render_template('index.html')
+        else:
+            return func(**kwargs)
+    return wrapper
+
 # --------------------------------------------------------------------- Login page
 @app.route('/')
 @app.route('/index')
@@ -14,7 +26,7 @@ def index():
     """ Landing page which displays login form if not already signed in  """
 
     if "username" in session:
-        return redirect(url_for('get_types'))
+        return render_template('get_types.html')
     else:
         return render_template('index.html')
 
@@ -30,7 +42,7 @@ def login():
         session['username'] = request.form['username']
         name = user['first-name'].title()
         session['name'] = name
-        return redirect(url_for('get_types'))
+        return render_template('get_types.html')
     else:
         flash("Username '{}' not found or invalid. Please try again or create an account by clicking on "
               "'Sign Up'".format(request.form['username']))
@@ -70,7 +82,8 @@ def logout():
     return redirect(url_for('index'))
 
 # --------------------------------------------------------------------- Landing page
-@app.route('/get_types')
+@app.route('/get_types', endpoint='get_types')
+@login_required
 def get_types():
     """ Display training types """
 
@@ -78,7 +91,8 @@ def get_types():
 
 
 # --------------------------------------------------------------------- Recipes
-@app.route('/recipes/<field>/<type>')
+@app.route('/recipes/<field>/<type>', endpoint='recipes')
+@login_required
 def recipes(field, type):
     """ Render template displaying all recipes in a summarised view from 'recipes' collection """
 
@@ -101,7 +115,8 @@ def recipes(field, type):
         return render_template('recipes.html', title='Recipes', recipes=recipe)
 
 # --------------------------------------------------------------------- Recipe detail
-@app.route('/recipe_detail/<recipe_id>')
+@app.route('/recipe_detail/<recipe_id>', endpoint='recipe_detail')
+@login_required
 def recipe_detail(recipe_id):
     """ Render template to display a recipe in detail """
 
@@ -109,7 +124,8 @@ def recipe_detail(recipe_id):
     return render_template('recipe_detail.html', recipe=recipe)
 
 # --------------------------------------------------------------------- Add recipe form
-@app.route('/add_recipe')
+@app.route('/add_recipe', endpoint='add_recipe')
+@login_required
 def add_recipe():
     """ Render template displaying form to add new recipe """
 
@@ -117,7 +133,8 @@ def add_recipe():
 
 
 # --------------------------------------------------------------------- Insert recipe
-@app.route('/insert_recipe', methods=["GET", "POST"])
+@app.route('/insert_recipe', endpoint='insert_recipe', methods=["GET", "POST"])
+@login_required
 def insert_recipe():
     """ Logic to insert new recipe into 'recipes' collection from add_recipe"""
 
@@ -150,7 +167,8 @@ def insert_recipe():
 
 
 # --------------------------------------------------------------------- Edit recipe
-@app.route('/edit_recipe/<recipe_id>')
+@app.route('/edit_recipe/<recipe_id>', endpoint='edit_recipe')
+@login_required
 def edit_recipe(recipe_id):
     """ Render the edit_recipe page for the recipe to be updated """
 
@@ -158,7 +176,8 @@ def edit_recipe(recipe_id):
     return render_template('edit_recipe.html', recipe=recipe)
 
 # --------------------------------------------------------------------- Update recipe
-@app.route('/update_recipe/<recipe_id>', methods=["GET", "POST"])
+@app.route('/update_recipe/<recipe_id>', endpoint='update_recipe', methods=["GET", "POST"])
+@login_required
 def update_recipe(recipe_id):
     """ Take the amended values from edit_recipe and update them into 'recipes' collection """
 
@@ -216,7 +235,8 @@ def update_recipe(recipe_id):
     return redirect(url_for('recipe_detail', recipe_id=recipe_id))
 
 # --------------------------------------------------------------------- Delete recipes
-@app.route('/delete_recipe/<recipe_id>', methods=['GET', 'POST'])
+@app.route('/delete_recipe/<recipe_id>', endpoint='delet_recipe', methods=['GET', 'POST'])
+@login_required
 def delete_recipe(recipe_id):
     """ Delete recipe """
 
@@ -232,7 +252,8 @@ def delete_recipe(recipe_id):
     return redirect(url_for('recipes', option='all'))
 
 # --------------------------------------------------------------------- Upvotes
-@app.route('/upvote/<recipe_id>', methods=['GET', 'POST'])
+@app.route('/upvote/<recipe_id>', endpoint='upvote', methods=['GET', 'POST'])
+@login_required
 def upvote(recipe_id):
     """ Increment upvote for the recipe """
 
@@ -241,7 +262,8 @@ def upvote(recipe_id):
     return redirect(url_for('recipe_detail', recipe_id=recipe_id))
 
 # --------------------------------------------------------------------- High/Low
-@app.route('/sort_by/<field>/<high_low>')
+@app.route('/sort_by/<field>/<high_low>', endpoint='sort_by')
+@login_required
 def sort_by(field, high_low):
     """ Display recipes with the highest ratings to the lowest """
 
@@ -258,7 +280,8 @@ def sort_by(field, high_low):
 
 
 # --------------------------------------------------------------------- statistics
-@app.route('/statistics')
+@app.route('/statistics', endpoint='statistics')
+@login_required
 def statistics():
     """ Page display data visualization about statistics for the recipes """
 
