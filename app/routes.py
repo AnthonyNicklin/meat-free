@@ -44,7 +44,7 @@ def login():
         session['name'] = name
         return render_template('get_types.html')
     else:
-        flash("Username '{}' not found or invalid. Please try again or create an account by clicking on "
+        flash("Username '{}' not found or invalid. "
               "'Sign Up'".format(request.form['username']))
         return redirect(url_for('index'))
 
