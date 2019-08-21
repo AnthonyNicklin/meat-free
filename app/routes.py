@@ -292,7 +292,7 @@ def statistics():
 
     # Build pie chart
     pie_chart = Pie()
-    pie_chart.title = 'Meal-times'
+    pie_chart.title = 'Meal Times'
     pie_chart.add('Breakfast', breakfast)
     pie_chart.add('Lunch', lunch)
     pie_chart.add('Dinner', dinner)
