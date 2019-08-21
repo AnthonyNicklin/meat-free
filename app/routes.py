@@ -285,9 +285,6 @@ def sort_by(field, high_low):
 def statistics():
     """ Page display data visualization about statistics for the recipes """
 
-    # Get the count of all the documents in recipes collection
-    recipe_count = mongo.db.recipes.find().count()
-
     # Count how many recipes have each meal time to send to the pie chart
     breakfast = mongo.db.recipes.find({'meal_time': 'breakfast'}).count()
     lunch = mongo.db.recipes.find({'meal_time': 'lunch'}).count()
