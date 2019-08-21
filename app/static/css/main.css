@@ -23,7 +23,6 @@ main {
 
 h1 {
     margin-top: 0rem;
-    padding-left: 1rem;
     }
 
 p {
@@ -227,8 +226,13 @@ img.training_image {
     }
 
 /*---------------------------------------------------------------------------------------Media Queries*/
-@media (min-width: 992px) {
-
+@media (max-width: 420px) {
+    h1 {
+        font-size: 3rem;
+        }
+    .row .col {
+        padding: 0px;
+        }
 }
 
 
