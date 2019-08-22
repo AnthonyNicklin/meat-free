@@ -2,7 +2,6 @@
 ## Data Centric Development 
 
 ![alt text](https://github.com/AnthonyNicklin/meat-free/blob/master/app/static/images/white_logo.png "Meat Free Logo")
-
 ## Aim
 
 Being a vegetarian and a fitness fanatic in the western world I have often found it hard to find one place with good 
@@ -242,11 +241,12 @@ There are no differences between the deployed version of the project found here 
 
 If you wish to run this code locally then please follow the instructions below.
 
-1. Download the code from the Github repository at https://github.com/AnthonyNicklin/meat-free.
+1. Download the code from the Github repository at [here](https://github.com/AnthonyNicklin/meat-free).
 2. Click on Clone or download then Download ZIP. This will download the code into a ZIP folder locally on your computer.
 3. Uncompress the ZIP folder.
-4. Create a virtual environment. Tutorial of how to create a virtual environment can be found here 
-https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/.
+4. Create a virtual environment. Tutorial of how to create a virtual environment can be found 
+[here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/). 
+.
 5. Activate the virtual environment.
 6. Install the necessary Python packages in the requirements.txt file.
     * ````pip3 install -r requirements.txt````
@@ -274,11 +274,11 @@ This project was deployed to Heroku and uses Heroku for its production environme
 deploy this web application to a production environment in Heroku.
 
 
-*Git must be installed onto your computer. Instructions for installing Git can be found here 
-https://git-scm.com/book/en/v2/Getting-Started-Installing-Git.
+*Git must be installed onto your computer. Instructions for installing Git can be found 
+[here](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
 **Heroku CLI must be installed in order to deploy to Heroku using these instructions. Please follow the instructions 
-here to download and install Heroku CLI https://devcenter.heroku.com/articles/heroku-cli.
+here to download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 
 ***You must have a MongoDB account and database setup with two collections created called ‘recipes’ and ‘user_accounts’. 
 Follow the instructions under the heading ‘Creating a MongoDB account’.
@@ -287,13 +287,13 @@ Follow the instructions under the heading ‘Creating a MongoDB account’.
 2. Select New > Create New App and fill out the details required then hit Create App.
 3. Select Settings > Reveal Config Vars
     * Enter in the following environment variables:
-        * SECRET_KEY:	secret key
-        * MONGO_URI:	    mongo uri
-        * MONGO_DBNAME:	mongo dbname
-        * FLASK_APP:		meat_free.py
-        * IP:			0.0.0.0
-        * PORT:			80
-4. Download the code from the Github repository at https://github.com/AnthonyNicklin/meat-free.
+        * SECRET_KEY: secret key
+        * MONGO_URI: mongo uri
+        * MONGO_DBNAME: mongo dbname
+        * FLASK_APP: meat_free.py
+        * IP: 0.0.0.0
+        * PORT:	80
+4. Download the code from the Github repository [here](https://github.com/AnthonyNicklin/meat-free).
 5. Click on Clone or download then Download ZIP. This will download the code into a ZIP folder locally on your computer.
 6. Uncompress the ZIP folder.
 7. Open up a terminal or cmd prompt and login into Heroku CLI.
@@ -318,7 +318,7 @@ dashboard.
 ### MongoDB
 #### Create a MongoDB Account
 
-The database used for this application is MongoDB and a free account can be created at https://www.mongodb.com/new.
+The database used for this application is MongoDB and a free account can be created [here](https://www.mongodb.com/new).
 
 1. Click on Try Free top right
 2. In the right hand panel complete the fields and complete verification steps required
