@@ -1,8 +1,7 @@
 # Meat Free
 ## Data Centric Development 
 
-![alt text](https://github.com/AnthonyNicklin/meat-free/blob/master/app/static/images/meat_free_logo_grey.png 
-"Meat Free Logo")
+![alt text](https://github.com/AnthonyNicklin/meat-free/blob/master/app/static/images/white_logo.png "Meat Free Logo")
 
 ## Aim
 
