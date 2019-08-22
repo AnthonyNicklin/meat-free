@@ -61,9 +61,11 @@
                                 <div class="flask-msg-red">
                                     {% with messages = get_flashed_messages() %}
                                         {% if messages %}
+                                            <ul>
                                             {% for message in messages %}
-                                                {{ message }}
+                                                <li>{{ message }}</li>
                                             {% endfor %}
+                                            </ul>
                                         {% endif %}
                                     {% endwith %}
                                 </div>
@@ -106,9 +108,11 @@
                                  <div class="flask-msg-red">
                                     {% with messages = get_flashed_messages() %}
                                         {% if messages %}
+                                            <ul>
                                             {% for message in messages %}
-                                                {{ message }}
+                                                <li>{{ message }}</li>
                                             {% endfor %}
+                                            </ul>
                                         {% endif %}
                                     {% endwith %}
                                 </div>
