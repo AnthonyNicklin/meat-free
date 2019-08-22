@@ -228,9 +228,9 @@ def update_recipe(recipe_id):
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
                                     {"$set": {"rating": request.form.get("rating")}})
 
-    if request.form.get("ingredient") is not None:
+    if request.form.get("ingredients") is not None:
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
-                                {"$set": {"ingredient": request.form.getlist("ingredient")}})
+                                {"$set": {"ingredients": request.form.getlist("ingredients")}})
 
     if request.form.get("method") is not None:
         mongo.db.recipes.update_one({'_id': ObjectId(recipe_id)},
