@@ -1,4 +1,4 @@
-##Aim
+## Aim
 
 Being a vegetarian and a fitness fanatic in the western world I have often found it hard to find one place with good 
 vegetarian recipes categorized by training type. 
@@ -12,7 +12,7 @@ So with all the above in mind I designed and built a handy web application to ac
 
 Meat Free is an online cookbook that allows site users to share, edit and read cooking recipes for vegetarian athletes.
 
-##UX
+# UX
 
 Starting with a mobile first design approach to this project I started creating mockups and wireframes for mobile 
 and small screens. I then moved onto creating mockups and wireframes for medium and larger screens. The design of the 
@@ -62,12 +62,12 @@ By doing this the forms can be kept more compact to help with adding or editing 
 To show some stats the Statistics page produces some nice graphs to help visualize what is in the database. The graphs 
 are interactivate giving the website some more functionality.
 
-##Features
+## Features
 
 The list below shows all the added features that needed to be in place for the project to be fully functional. The 
 features planned to be added in the future are listed in the “Future Features” section of this document.
 
-####Freatures on this website are:
+#### Features on this website are:
 
 * Login - allows user to login
 * Sign Up - Sign up new users
@@ -78,14 +78,14 @@ features planned to be added in the future are listed in the “Future Features�
 * Add recipes, update recipes and delete recipes
 * Statistics - data visualisation
 
-####Future features
+#### Future features
 
 * Full user account functionality with password protection
 * Ability for users to follow other users 
 * Notification system to alert users of new recipes added by users they follow
 * Pagination 
 
-##Database Schema
+## Database Schema
 
 I chose to use a document store type database using Mongodb for the database for this application. My reason for this 
 is each document can hold all the attributes and data for each recipe with no relationships needed to be created to 
@@ -94,7 +94,7 @@ other recipes or data.
 There are two collections, one called ‘recipes’ which houses all the recipe details, and once call ‘user_accounts’ to 
 house user account details. 
 
-##Technologies Used
+## Technologies Used
 
 Below are a list of the programming languages, technologies and frameworks used for this website.
 
@@ -124,7 +124,7 @@ Below are a list of the programming languages, technologies and frameworks used 
 * Google Docs
     * Write the contents of the README.md file.
 
-##Testing
+## Testing
 
 I conducted testing across different platforms and web browsers in order to make sure the website worked correctly and 
 looked great across each one. I also asked friends and family to test across their own devices and to give me honest 
@@ -211,7 +211,7 @@ edit_recipes form. This was causing a bad request to the database if the dropdow
 I solved this issue by first passing the value in the database and then using an if else block I passed in variables 
 from a list that were not in the database to create the list options. 
 
-##Depolyment
+## Depolyment
 
 The web application was created using PyCharm CE IDE. Git was used for version control and pushed to a remote 
 repository hosted on Github.
@@ -233,7 +233,7 @@ to build successfully.
 
 There are no differences between the deployed version of the project found here and its development version.
 
-####How to deploy the code locally
+#### How to deploy the code locally
 
 If you wish to run this code locally then please follow the instructions below.
 
@@ -263,7 +263,7 @@ instructions under the heading ‘Create a MongoDB account’.
 10. Open up a terminal and run ````flask run````.
 11. Navigate to the address the terminal returns to view Meat Free.
 
-####Deploy to Heroku
+#### Deploy to Heroku
 
 This project was deployed to Heroku and uses Heroku for its production environment. Instructions are below on how to 
 deploy this web application to a production environment in Heroku.
@@ -310,8 +310,8 @@ reason they are not then follow the steps below to create them.
 dashboard. 
 13. Once the build is complete click on Open App top right to see Meat Free in action.
 
-###MongoDB
-####Create a MongoDB Account
+### MongoDB
+#### Create a MongoDB Account
 
 The database used for this application is MongoDB and a free account can be created at https://www.mongodb.com/new.
 
@@ -334,13 +334,13 @@ The database used for this application is MongoDB and a free account can be crea
     * Copy and past the Connection String and keep this safe as you will need it for your MONGO_URI variable to deploy 
     the code.
     
-##Credits
-####Content
+## Credits
+#### Content
 
 Recipes where taken from a number of websites with the authors of the recipes being credited in the web application 
 under each recipe.
 
-####Images
+#### Images
 
 All images for this web application are being used under free commercial license from Pixaby. Links to each image are 
 below.
@@ -353,7 +353,7 @@ below.
 * [Landing Image](https://pixabay.com/photos/casserole-dish-vegetable-tomato-2776735/)
 
 
-####Logo
+#### Logo
 
 The carrot icon was taken from Pixaby under free commercial license. The writing Meat Free was created using Google 
 Fonts Mountains of Christmas. Using Adobe Xd I added the font and image together and created different backgrounds 
