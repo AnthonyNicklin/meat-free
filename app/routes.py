@@ -172,8 +172,12 @@ def insert_recipe():
 def edit_recipe(recipe_id):
     """ Render the edit_recipe page for the recipe to be updated """
 
+    difficulty = ['Easy', 'Medium', 'Hard']
+    meal_time = ['Breakfast', 'Lunch', 'Dinner']
+    training_types = ['endurance', 'power', 'speed', 'strength']
     recipe = mongo.db.recipes.find_one({'_id': ObjectId(recipe_id)})
-    return render_template('edit_recipe.html', recipe=recipe)
+    return render_template('edit_recipe.html', recipe=recipe, training_types=training_types, difficulty=difficulty,
+                           meal_time=meal_time)
 
 # --------------------------------------------------------------------- Update recipe
 @app.route('/update_recipe/<recipe_id>', endpoint='update_recipe', methods=["GET", "POST"])

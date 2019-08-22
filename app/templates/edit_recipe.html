@@ -38,13 +38,15 @@
                         <label for="time_to_make">Time to Make in minutes</label>
                     </div>
 
-                    <div class="input-field col s12 l6">                        <!-- Training Type -->
+                    <div class="input-field col s12 l6">                <!-- Training Types -->
                         <select name="training_type">
-                            <option value="{{ recipe.training_type.title() }}">{{ recipe.training_type.title() }}</option>
-                            <option value="endurance">Endurance</option>
-                            <option value="speed">Speed</option>
-                            <option value="power">Power</option>
-                            <option value="strength">Strength</option>
+                            {% for training in training_types %}
+                                {% if training == recipe.training_type %}
+                                    <option value="{{ training }}" disabled selected>{{ training.title() }}</option>
+                                {% else %}
+                                    <option value="{{ training }}">{{ training.title() }}</option>
+                                {% endif %}
+                            {% endfor %}
                         </select>
                         <label>Training Type</label>
                     </div>
@@ -122,24 +124,30 @@
                 <br>
                                                                                 <!-- Difficulty -->
                 <div class="row">
+
                     <div class="input-field col s12 l4">
-                        <select name="difficulty" required>
-                            <option value="{{ recipe.difficulty.title() }}">{{ recipe.difficulty.title() }}</option>
-                            <option value="easy">Easy</option>
-                            <option value="medium">Medium</option>
-                            <option value="hard">Hard</option>
+                        <select name="difficulty">
+                            {% for diff in difficulty %}
+                                {% if diff == recipe.difficulty.title() %}
+                                    <option value="{{ diff.title() }}" disabled selected>{{ diff.title() }}</option>
+                                {% else %}
+                                    <option value="{{ diff.title() }}">{{ diff.title() }}</option>
+                                {% endif %}
+                            {% endfor %}
                         </select>
                         <label>Difficulty</label>
                     </div>
-
                                                                                 <!-- Meal Time -->
-                    <div class="input-field col s12 l4">
 
-                        <select name="meal_time" required>
-                            <option value="{{ recipe.meal_time.title() }}">{{ recipe.meal_time.title() }}</option>
-                            <option value="breakfast">Breakfast</option>
-                            <option value="lunch">Lunch</option>
-                            <option value="dinner">Dinner</option>
+                    <div class="input-field col s12 l4">
+                        <select name="meal_time">
+                            {% for meal in meal_time %}
+                                {% if meal == recipe.meal_time %}
+                                    <option value="{{ meal }}" disabled selected>{{ meal.title() }}</option>
+                                {% else %}
+                                    <option value="{{ meal }}">{{ meal.title() }}</option>
+                                {% endif %}
+                            {% endfor %}
                         </select>
                         <label>Meal Time</label>
                     </div>
