@@ -1,5 +1,5 @@
 # Meat Free
-## Data Centric Web App Development
+## Data Centric Development 
 
 ![alt text](https://github.com/AnthonyNicklin/meat-free/blob/master/app/static/images/meat_free_logo_grey.png 
 "Meat Free Logo")
