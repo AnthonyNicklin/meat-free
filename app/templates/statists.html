@@ -6,13 +6,16 @@
 <h1 class="page-title mountain_font text-orange">STATISTICS</h1>
 
 <div class="row">
-    <div class="chart col s12 m7">
-        <embed type="image/svg+xml" src="{{ pie_chart|safe }}" />
-    </div>
-    <div class="col s12 m5 center-align">
+
+     <div class="float-sm-none float-md-right col s12 m5 center-align">
         <h3>Meal Times</h3>
         <p>The pie chart shows you how many recipes there are per meal time.</p>
     </div>
+
+    <div class="chart col s12 m7">
+        <embed type="image/svg+xml" src="{{ pie_chart|safe }}" />
+    </div>
+
 </div>
 
 <br>
@@ -26,4 +29,5 @@
         <embed type="image/svg+xml" src="{{ line_chart|safe }}" />
     </div>
 </div>
+
 {% endblock %}
