@@ -49,6 +49,7 @@
                     <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 
                     <ul class="right hide-on-med-and-down">
+                        <li><a href="{{ url_for('index') }}">HOME</a></li>
                         <li><a href="{{ url_for('recipes', field='recipes', type='all') }}">RECIPES</a></li>
                         <li><a href="{{ url_for('add_recipe') }}">ADD RECIPES</a></li>
                         <li><a href="{{ url_for('statistics') }}">STATISTICS</a></li>
@@ -62,6 +63,7 @@
 
         <!-- Mobile Navbar -->
         <ul class="side-nav" id="mobile-demo">
+            <li><a href="{{ url_for('index') }}">HOME</a></li>
             <li><a href="{{ url_for('recipes', field='recipes', type='all') }}">RECIPES</a></li>
             <li><a href="{{ url_for('add_recipe') }}">ADD RECIPES</a></li>
             <li><a href="{{ url_for('statistics') }}">STATISTICS</a></li>
