@@ -201,13 +201,24 @@ img.training_image {
     padding: 15px;
     text-align: center;
     }
+.copyright {
+    margin-top: 0.5rem;
+    }
 
 .copyright a {
     color: #fff;
     }
 
+.social-bg {
+    background-color: #fff;
+    border-radius: 50%;
+    width: 2.7rem;
+    height: 2.7rem;
+    display: inline-grid;
+    }
+
 .social-links a {
-    color: #fff;
+    color: #000;
     font-size: 20px;
     padding: 5px 5px 5px 5px;
     text-decoration: none;
