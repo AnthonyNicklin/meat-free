@@ -98,6 +98,14 @@ other recipes or data.
 There are two collections, one called ‘recipes’ which houses all the recipe details, and once call ‘user_accounts’ to 
 house user account details. 
 
+#### Recipes
+![alt text](https://github.com/AnthonyNicklin/meat-free/blob/master/app/static/images/readme_imgs/recipes.png 
+"recipes_schema")
+
+#### User Accounts
+![alt text](https://github.com/AnthonyNicklin/meat-free/blob/master/app/static/images/readme_imgs/user_accounts.png 
+"user_accounts_schema")
+
 ## Technologies Used
 
 Below are a list of the programming languages, technologies and frameworks used for this website.
