@@ -317,7 +317,7 @@ def statistics():
     line_chart.add('Speed', [{'value': speed, 'label': 'Speed'}])
     line_chart = line_chart.render_data_uri()
 
-    return render_template('statists.html', title='Statists', pie_chart=pie_chart, line_chart=line_chart)
+    return render_template('statists.html', title='Statistics', pie_chart=pie_chart, line_chart=line_chart)
 
 
 if __name__ == '__main__':
