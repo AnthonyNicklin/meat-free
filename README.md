@@ -122,6 +122,8 @@ Below are a list of the programming languages, technologies and frameworks used 
 * [Materialize](https://materializecss.com) 0.100.2 framework
     * The website uses Materialize CSS framework for its styling, grid system, page layout, button styling, icons and 
     response navigation bar.
+* [Bootstrap4.3.1 framework](https://getbootstrap.com)
+    * Responsive float elements for statistics pages.
 * [PyCharm CE IDE](https://www.jetbrains.com/pycharm/)
     * PyCharm Community Edition was used as the IDE to write the web application.
 * [Marvel App](https://marvelapp)
@@ -265,7 +267,7 @@ If you wish to run this code locally then please follow the instructions below.
     * MacOS and Linux ````export FLASK_APP=meat_free.py````
     * Windows ````set FLASK_APP=meat_free.py````
 9. Connect your MongoDB database to the application. If you have not created a MongoDB database please follow the 
-instructions under the heading ‘Create a MongoDB account’.
+instructions under the heading [Create a MongoDB account](https://github.com/AnthonyNicklin/meat-free#create-a-mongodb-account).
     * Set MongoDB URI as environment variable.
         * MacOS and Linux ````export MONGO_URI=<mongo_uri>````
         * Windows ````set MONGO_URI=<mongo_uri>````
@@ -289,7 +291,8 @@ deploy this web application to a production environment in Heroku.
 here to download and install [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
 
 ***You must have a MongoDB account and database setup with two collections created called ‘recipes’ and ‘user_accounts’. 
-Follow the instructions under the heading ‘Creating a MongoDB account’.
+Follow the instructions under the heading 
+[Creating a MongoDB account](https://github.com/AnthonyNicklin/meat-free#create-a-mongodb-account).
 
 1. Open up Heroku and navigate to your dashboard.
 2. Select New > Create New App and fill out the details required then hit Create App.
@@ -308,12 +311,12 @@ Follow the instructions under the heading ‘Creating a MongoDB account’.
     * ````heroku login````
 8. Check the app is present.
     * ````heroku apps````
-9. A runtime.txt and Proflice have already been created for this project but make sure they are present. If for some 
+9. A runtime.txt and Procfile have already been created for this project but make sure they are present. If for some 
 reason they are not then follow the steps below to create them.
     * Runtime.txt
         * Create a new text file in the root directory of the project and add ‘python-3.6.6’ to the file.
     * Procfile
-        * In a terminal make sure you are in the root directory of the project then run ````touch Profile````.
+        * In a terminal make sure you are in the root directory of the project then run ````touch Procfile````.
         * Add the following text to the Procfile ‘web: flask translate compile; gunicorn meat_free:app’.
 10. Add a new git remote for Heroku.
     * ````git remote add heroku git@heroku.comYOUR_APP_NAME.git````
@@ -364,6 +367,11 @@ below.
 * [Carrot](https://pixabay.com/vectors/carrot-root-vegetable-orange-33625/)
 * [Garlic](https://pixabay.com/vectors/garlic-cloves-vegetable-organic-25382/)
 * [Landing Image](https://pixabay.com/photos/casserole-dish-vegetable-tomato-2776735/)
+
+##### Favicon
+
+I used a Favicon and App Icon Generator online to create the Favicon for this web application. The web site I used was
+[Favicon.ico & App Icon Generator](https://www.favicon-generator.org).
 
 
 #### Logo
