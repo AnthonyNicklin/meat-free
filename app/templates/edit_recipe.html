@@ -40,6 +40,9 @@
 
                     <div class="input-field col s12 l6">                <!-- Training Types -->
                         <select name="training_type">
+                            {% if recipe.training_type == 'None Selected' %}
+                                    <option value="None Selected" disabled selected>None Selected</option>
+                            {% endif %}
                             {% for training in training_types %}
                                 {% if training == recipe.training_type %}
                                     <option value="{{ training }}" disabled selected>{{ training.title() }}</option>
@@ -127,6 +130,9 @@
 
                     <div class="input-field col s12 l4">
                         <select name="difficulty">
+                            {% if recipe.difficulty.title() == 'None Selected' %}
+                                    <option value="None Selected" disabled selected>None Selected</option>
+                            {% endif %}
                             {% for diff in difficulty %}
                                 {% if diff == recipe.difficulty.title() %}
                                     <option value="{{ diff.title() }}" disabled selected>{{ diff.title() }}</option>
@@ -141,6 +147,9 @@
 
                     <div class="input-field col s12 l4">
                         <select name="meal_time">
+                            {% if recipe.meal_time.title() == 'None Selected' %}
+                                    <option value="None Selected" disabled selected>None Selected</option>
+                            {% endif %}
                             {% for meal in meal_time %}
                                 {% if meal == recipe.meal_time %}
                                     <option value="{{ meal }}" disabled selected>{{ meal.title() }}</option>
@@ -164,12 +173,14 @@
                     <div class="input-field ingre_wrapper col s12">
                         <label for="ingredients">Add Ingredients</label>
                         {% for ingre in recipe.ingredients %}
-                        <input name="ingredients" id="ingredients" type="text" value="{{ ingre }}"/>
+                            <input name="ingredients" id="ingredients" class="extra_ingre" type="text" value="{{ ingre }}"/>
                         {% endfor %}
                     </div>
 
-                    <a href="javascript:void(0);" id="add_ingredient"><i class="material-icons">add</i></a>
-                    <a href="javascript:void(0);" id="remove_ingredient"><i class="material-icons">remove</i></a>
+                    <div class="plus_minus">
+                        <a href="javascript:void(0);" id="add_ingredient"><i class="material-icons">add</i></a>
+                        <a href="javascript:void(0);" id="remove_ingredient"><i class="material-icons">remove</i></a>
+                    </div>
 
                 </div>
                                                                                 <!-- Method -->
@@ -177,7 +188,7 @@
                     <div class="input-field method_wrapper col s12">
                         <label for="method">Add Method steps</label>
                         {% for step in recipe.method %}
-                        <input name="method" id="method" type="text" value="{{ step }}"/>
+                        <input name="method" id="method" class="extra_method" type="text" value="{{ step }}"/>
                         {% endfor %}
                     </div>
 
