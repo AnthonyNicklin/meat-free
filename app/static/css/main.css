@@ -215,9 +215,9 @@ img.training_image {
 .social-bg {
     background-color: #fff;
     border-radius: 50%;
-    width: 2.7rem;
-    height: 2.7rem;
-    display: inline-grid;
+    width: 3rem;
+    height: 2rem;
+    display: inline-block;
     }
 
 .social-links a {
