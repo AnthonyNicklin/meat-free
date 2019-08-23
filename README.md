@@ -95,7 +95,7 @@ I chose to use a document store type database using Mongodb for the database for
 is each document can hold all the attributes and data for each recipe with no relationships needed to be created to 
 other recipes or data. 
 
-There are two collections, one called ‘recipes’ which houses all the recipe details, and once call ‘user_accounts’ to 
+There are two collections, one called ‘recipes’ which houses all the recipe details, and once called ‘user_accounts’ to 
 house user account details. 
 
 #### Recipes
