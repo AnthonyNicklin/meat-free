@@ -3,7 +3,7 @@
 {% block content %}
 
 <script>
-    try {
+
         function detectIE() {
         var ua = window.navigator.userAgent;
 
@@ -19,12 +19,8 @@
            $('.chart_ms').css('display', 'block');
            $('.chart_other').hide();
                 }
-            }
         }
-        catch(err) {
-            $('.chart_ms').css('display', 'block');
-            $('.chart_other').hide();
-        }
+
 </script>
 
 <br>
