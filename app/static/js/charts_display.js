@@ -1,4 +1,5 @@
 // Script provided by Stack Overflow Mario - https://stackoverflow.com/questions/19999388/check-if-user-is-using-ie
+// with amendments made.
 
 // Get IE or Edge browser version
 var version = detectIE();
@@ -6,16 +7,16 @@ var version = detectIE();
 if (version === false) {
     console.log('Non Mircosoft browser');
 } else if (version >= 12) {
-    document.getElementsByClassName('chart_ms').style.display = 'block';
-    document.getElementsByClassName('chart_other').style.display = 'none';
-
-    //var style = document.createElement('style');
-    //style.sheet.insertRule('.chart_ms {display: block}');
-    //style.sheet.insertRule('.chart_other {display: none}');
+    document.getElementById('chart_ms_meal_time').style.display = 'block';
+    document.getElementById('chart_ms_training_type').style.display = 'block';
+    document.getElementById('chart_other_meal').style.display = 'none';
+    document.getElementById('chart_other_training').style.display = 'none';
 
 } else {
-    document.getElementsByClassName('chart_ms').style.display = 'block';
-    document.getElementsByClassName('chart_other').style.display = 'none';
+    document.getElementById('chart_ms_meal_time').style.display = 'block';
+    document.getElementById('chart_ms_training_type').style.display = 'block';
+    document.getElementById('chart_other_meal').style.display = 'none';
+    document.getElementById('chart_other_training').style.display = 'none';
 
 }
 

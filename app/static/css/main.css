@@ -156,7 +156,11 @@ h1.logo-header {
   color: red;
   }
 
-.chart_ms {
+#chart_ms_meal_time {
+    display: none;
+    }
+
+#chart_ms_training_type {
     display: none;
     }
 
