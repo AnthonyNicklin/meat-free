@@ -156,6 +156,10 @@ h1.logo-header {
   color: red;
   }
 
+.chart_ms {
+    display: none;
+    }
+
 /* ------------------------------------------------- Cards */
 .recipe_details {
     display: inline-block;
@@ -189,9 +193,6 @@ img.training_image {
     margin-bottom: 5rem;
     }
 
-.plus_minus {
-    margin-top: 1rem;
-    }
 /*-------------------------------------------------- Charts*/
 .chart {
     margin-bottom: 1rem;
