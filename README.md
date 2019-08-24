@@ -245,6 +245,12 @@ troubleshooting and looking up the Heroku error I found that I needed to supply 
 version of Python the application was using. I also had to install and set Gunicorn in the Procfile for the application 
 to build successfully.
 
+Microsoft IE and Edge browsers do not support 'embed' elements by default without the end user having to amend their 
+security settings. Having the charts display using the 'img' element was a easy fix but this would mean
+sacrificing the charts being interactive across all browsers. After some research I found a script on Stack Overflow
+that would detect the browser and version. I used this script to control how the charts are to be displayed base on 
+browser being used.
+
 There are no differences between the deployed version of the project found here and its development version.
 
 #### How to deploy the code locally
@@ -380,6 +386,10 @@ The carrot icon was taken from Pixaby under free commercial license. The writing
 Fonts Mountains of Christmas. Using Adobe Xd I added the font and image together and created different backgrounds 
 for the image to be used on different pages.
 
+#### Code
+
+charts_display.js - Detecting web browser and version by Mario on Stack Overflow. Full script can be viewed
+[here](https://stackoverflow.com/questions/19999388/check-if-user-is-using-ie).
 
 
 
