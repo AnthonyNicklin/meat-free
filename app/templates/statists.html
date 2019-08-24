@@ -10,15 +10,17 @@ var version = detectIE();
 if (version === false) {
     console.log('Non Mircosoft browser');
 } else if (version >= 12) {
-    jQuery(function($) {
-        $('.chart_ms').css('display', 'block');
-        $('.chart_other').hide();
-    });
+    document.getElementByClassName('chart_ms').style.display = 'block';
+    document.getElementByClassName('chart_other').style.display = 'none';
+
+    //var style = document.createElement('style');
+    //style.sheet.insertRule('.chart_ms {display: block}');
+    //style.sheet.insertRule('.chart_other {display: none}');
+
 } else {
-    jQuery(function($) {
-        $('.chart_ms').css('display', 'block');
-        $('.chart_other').hide();
-    });
+    document.getElementByClassName('chart_ms').style.display = 'block';
+    document.getElementByClassName('chart_other').style.display = 'none';
+
 }
 
 // add details to debug result
