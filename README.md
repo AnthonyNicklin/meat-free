@@ -22,7 +22,8 @@ Starting with a mobile first design approach to this project I started creating 
 and small screens. I then moved onto creating mockups and wireframes for medium and larger screens. The design of the 
 site is cool, cheeky and fun.
 
-Mockups and wireframes can be viewed via this link - Mockups/wireframes.
+Mockups and wireframes can be viewed via this link - 
+[mockups and wireframes](https://github.com/AnthonyNicklin/meat-free/tree/master/mockups_wireframes).
 
 Below are user stories that were conducted in order to gain clear goals that needed to be achieved for this website.
 
