@@ -113,9 +113,9 @@ img#logo-login {
     display: inline-block;
     }
 
-h1.logo-header {
-    display: inline-block;
-    padding-left: 0rem;
+span.logo-header {
+    padding-right: 5rem;
+    font-size: 4.2rem;
     }
 
 .logo-container {
@@ -258,6 +258,13 @@ img.training_image {
         }
     .row .col {
         padding: 0px;
+        }
+    img#logo-login {
+        width: 5rem;
+        }
+
+    span.logo-header {
+        padding-right: 0rem;
         }
 }
 
