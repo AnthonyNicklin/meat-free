@@ -5,7 +5,7 @@
 var version = detectIE();
 
 if (version === false) {
-    console.log('Non Mircosoft browser');
+    return 'Non Mircosoft browser';
 } else if (version >= 12) {
     document.getElementById('chart_ms_meal_time').style.display = 'block';
     document.getElementById('chart_ms_training_type').style.display = 'block';
