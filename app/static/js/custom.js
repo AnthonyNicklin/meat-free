@@ -24,7 +24,7 @@ $(document).ready(function(){
 
             if (x < maxIngre) {
             x++;
-            $('.ingre_wrapper').append(ingreHtml)
+            $('.ingre_wrapper').append(ingreHtml);
             }
     });
 
@@ -33,7 +33,7 @@ $(document).ready(function(){
 
         if (y < maxSteps) {
         y++;
-        $('.method_wrapper').append(methodHtml)
+        $('.method_wrapper').append(methodHtml);
         }
     });
 
