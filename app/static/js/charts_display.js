@@ -5,7 +5,11 @@
 var version = detectIE();
 
 if (version === false) {
-    return 'Non Mircosoft browser';
+    document.getElementById('chart_ms_meal_time').style.display = 'none';
+    document.getElementById('chart_ms_training_type').style.display = 'none';
+    document.getElementById('chart_other_meal').style.display = 'block';
+    document.getElementById('chart_other_training').style.display = 'block';
+
 } else if (version >= 12) {
     document.getElementById('chart_ms_meal_time').style.display = 'block';
     document.getElementById('chart_ms_training_type').style.display = 'block';

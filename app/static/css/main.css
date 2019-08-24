@@ -156,14 +156,21 @@ h1.logo-header {
   color: red;
   }
 
-#chart_ms_meal_time {
-    display: none;
+#chart_ms_meal_time {       /* Display block is default for charts inside img elements */
+    display: block;
     }
 
 #chart_ms_training_type {
+    display: block;
+    }
+
+#chart_other_meal {       /* Display none is default for charts inside img elements */
     display: none;
     }
 
+#chart_other_training {
+    display: none;
+    }
 /* ------------------------------------------------- Cards */
 .recipe_details {
     display: inline-block;
