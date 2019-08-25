@@ -142,7 +142,7 @@ def insert_recipe():
 
     if request.method == "POST":
         upvote_default = 0
-        ingredients = request.form.getlist('ingredient')        # Collected data and store into arrays
+        ingredients = request.form.getlist('ingredients')        # Collected data and store into arrays
         allergens = request.form.getlist('allergens')
         methods = request.form.getlist('method')
 
