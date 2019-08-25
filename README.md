@@ -121,7 +121,7 @@ Below are a list of the programming languages, technologies and frameworks used 
     * Materialize plugins.
 * Markdown
     * Used to write README.md file.
-* [MongoDB](https://cloud.mongodb.com)
+* [MongoDB](https://mongodb.com)
     * Document-oriented database used for the application database.
 * [Materialize](https://materializecss.com) 0.100.2 framework
     * The website uses Materialize CSS framework for its styling, grid system, page layout, button styling, icons and 
@@ -130,7 +130,7 @@ Below are a list of the programming languages, technologies and frameworks used 
     * Responsive float elements for statistics pages.
 * [PyCharm CE IDE](https://www.jetbrains.com/pycharm/)
     * PyCharm Community Edition was used as the IDE to write the web application.
-* [Marvel App](https://marvelapp)
+* [Marvel App](https://marvelapp.com)
     * This was used to design and create the wireframe for this project.
 * [Google Fonts](https://fonts.google.com)
 * Git
