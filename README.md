@@ -18,8 +18,8 @@ Meat Free is an online cookbook that allows site users to share, edit and read c
 
 # UX
 
-Starting with a mobile first design approach to this project I started creating mockups and wireframes for mobile 
-and small screens. I then moved onto creating mockups and wireframes for medium and larger screens. The design of the 
+Starting with a mobile first design approach to this project I started by creating mockups and wireframes for 
+small screens. I then moved onto creating mockups and wireframes for medium and larger screens. The design of the 
 site is cool, cheeky and fun.
 
 Mockups and wireframes can be viewed via this link - 
@@ -45,7 +45,7 @@ disappear on screen width below 992 pixels and a burger menu icon appears top le
 it brings a side navigation bar across from the left. The navigation bar is fixed to the top and follows the use down 
 the page for ease of navigation.
 
-When a user first visits the site they are presented with a clean simple login form with links to a sign up form if 
+When a user first visits the site they are presented with a clean simple login form with a link to a sign up form if 
 they do not have an account. Leaving out a navigation bar and rendering the logo center just above the forms gives an 
 elegant look and great first-impression.
 
@@ -53,8 +53,8 @@ The landing-page once signed in welcomes the user with a lovely image of fresh v
 presented with some small content to explain the website and how to use it. The cards underneath when clicked on will 
 take the user straight to a summarized view displaying all recipes under that training type.
 
-Recipes is the main summarized view with a number all filters that can be used. Each summarized card displays a small 
-amount facts and description about the recipe with links to view the recipe in its full glory.
+Recipes is the main summarized view have a number all filters that the user can select. Each summarized card displays a small 
+amount of facts with a description about the recipe with links to view the recipe in its full glory.
 
 The Recipe Details view displays the recipe is a clean simple manner. Care was taken to not clutter this view as most 
 online cookbooks seem to have so much going on in the page that just reading the list of ingredients can be a task in 
@@ -65,7 +65,9 @@ more than one way. The plus and minus symbols let the user add or remove input f
 By doing this the forms can be kept more compact to help with adding or editing on smaller devices.
 
 To show some stats the Statistics page produces some nice graphs to help visualize what is in the database. The graphs 
-are interactivate giving the website some more functionality.
+are interactive except on Microsoft IE and Edge browsers 
+(see [development](https://github.com/AnthonyNicklin/meat-free#depolyment) section for reason) giving the website some 
+more functionality.
 
 ## Features
 
@@ -75,11 +77,11 @@ features planned to be added in the future are listed in the “Future Features�
 #### Features on this website are:
 
 * Login - allows user to login
-* Sign Up - Sign up new users
+* Sign Up - sign up new users
 * Training Type cards - allows users to navigate straight to recipes for that training type
 * Recipes - shows summarized view of all recipes 
 * Recipes filters - allows different filters to be applied to a summarized view
-* Recipes details - Detail display of a recipe
+* Recipes details - detail display of a recipe
 * Add recipes, update recipes and delete recipes
 * Statistics - data visualisation
 
@@ -92,9 +94,10 @@ features planned to be added in the future are listed in the “Future Features�
 
 ## Database Schema
 
-I chose to use a document store type database using Mongodb for the database for this application. My reason for this 
-is each document can hold all the attributes and data for each recipe with no relationships needed to be created to 
-other recipes or data. 
+I chose to use a document-oriented database using [MongoDB](https://www.mongodb.com) for this web application. My reason for this 
+is each document can hold all the attributes and data for each recipe in once document. Also application logic is easier 
+to write giving the advantage of adding or removing recipe categories in the future, and also implementing future 
+features.
 
 There are two collections, one called ‘recipes’ which houses all the recipe details, and once called ‘user_accounts’ to 
 house user account details. 
@@ -138,6 +141,8 @@ Below are a list of the programming languages, technologies and frameworks used 
 * Firefox Inspector
 * Google Docs
     * Write the contents of the README.md file.
+* [Adobe Xd](https://www.adobe.com/uk/products/xd.html)
+    * Used for creating logo.
 
 ## Testing
 
@@ -179,7 +184,7 @@ Manual testing was conducted to ensure the user story objectives were achieved.
     * Click on each option in the dropdown menu for ‘Training Type’ and also ‘Meal Times’. Summarized view displayed 
     recipes based on the option selected.
     * Click on each training type card on the landing page.
-    * Repeat step 3b for each training type.
+    * Repeat for each training type.
 4. I want the ability to display the summarised view in different orders based on ratings, upvotes, difficulty etc. 
     * Click on ‘Recipes’ in the navigation bar.
     * Using the ‘Sort By’ drop down menu select each option. The summarised view changes the order of the recipes based 
@@ -211,7 +216,7 @@ Manual testing was conducted to ensure the user story objectives were achieved.
         * The recipe is no longer in the database and no longer appears on the website.
 8. I want to be able to upvote on recipes I like.
     * Click on a ‘Click for full recipe’ on a recipe card.
-    * Click on the thumbs up icon to give the recipe an upvotes and the number under the icon will increment by one.
+    * Click on the thumbs up icon to give the recipe an upvote and the number under the icon will increment by one.
 9. I want to be able to provide a rating to the recipe I added.
     * Click on ‘Add Recipes’ in the navigation bar.
     * Enter a number in the ‘Rate this recipe’ field.
@@ -221,23 +226,23 @@ Manual testing was conducted to ensure the user story objectives were achieved.
     
 Further testing was conducted for adding recipes and editing recipes to ensure no errors would occur. 
 
-While conducting this testing I found that select elements could not contain disabled selected attributes in the 
-edit_recipes form. This was causing a bad request to the database if the dropdown menus had not been altered. 
-I solved this issue by first passing the value in the database and then using an if else block I passed in variables 
-from a list that were not in the database to create the list options. 
+While conducting this testing I found a bug with select elements could not contain disabled selected attributes in the 
+edit_recipes form. Orginally I have hard coded the options in but, this was causing a bad request to the database if 
+the dropdown menus had not been altered. I solved this issue using if statements and for loops, and passing in options 
+via lists from the view to the template.
 
 ## Depolyment
 
 The web application was created using PyCharm CE IDE. Git was used for version control and pushed to a remote 
 repository hosted on Github.
 
-The web application is deployed using Heroku and can viewed here - Meat Free
+The web application is deployed using Heroku and can viewed here - [Meat Free](https://meat-free.herokuapp.com)
 
 The web application was built and tested locally and once near completion it was pushed to Heroku by linking the 
 master git branch from the remote Github repository to the app created in Heroku. All changes pushed to the master 
-Github branch automatically pushed to the production application in Heroku. 
+Github branch automatically pushs to the production application in Heroku. 
 
-To ensure additional features and testing was conducted before being pushed to the production environment in Heroku. 
+To ensure additional features and testing was conducted before pushing to the production environment in Heroku. 
 I created a development branch in git. All changes were pushed with commits first to the development branch then once 
 happy merged into the master branch. Then as mentioned this would automatically push to the production environment.
 
@@ -248,22 +253,22 @@ to build successfully.
 
 Microsoft IE and Edge browsers do not support 'embed' elements by default without the end user having to amend their 
 security settings. Having the charts display using the 'img' element was a easy fix but this would mean
-sacrificing the charts being interactive across all browsers. After some research I found a script on Stack Overflow
-that would detect the browser and version. I used this script to control how the charts are to be displayed base on 
-browser being used.
+sacrificing the charts being interactive on other browsers. After some research I found a script on Stack Overflow
+that would detect the browser and version. I used this script to control how the charts are to be displayed based on 
+the browser being used.
 
-There are no differences between the deployed version of the project found here and its development version.
+There are no differences between the deployed version of the project found [here](https://meat-free.herokuapp.com) 
+and its development version.
 
 #### How to deploy the code locally
 
 If you wish to run this code locally then please follow the instructions below.
 
-1. Download the code from the Github repository at [here](https://github.com/AnthonyNicklin/meat-free).
-2. Click on Clone or download then Download ZIP. This will download the code into a ZIP folder locally on your computer.
+1. Download the code from the Github repository from [here](https://github.com/AnthonyNicklin/meat-free).
+2. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
 3. Uncompress the ZIP folder.
 4. Create a virtual environment. Tutorial of how to create a virtual environment can be found 
 [here](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/). 
-.
 5. Activate the virtual environment.
 6. Install the necessary Python packages in the requirements.txt file.
     * ````pip3 install -r requirements.txt````
@@ -302,8 +307,8 @@ Follow the instructions under the heading
 [Creating a MongoDB account](https://github.com/AnthonyNicklin/meat-free#create-a-mongodb-account).
 
 1. Open up Heroku and navigate to your dashboard.
-2. Select New > Create New App and fill out the details required then hit Create App.
-3. Select Settings > Reveal Config Vars
+2. Select _New_ > _Create New App_ and fill out the details required then hit _Create App_.
+3. Select _Settings_ > _Reveal Config Vars_
     * Enter in the following environment variables:
         * SECRET_KEY: secret key
         * MONGO_URI: mongo uri
@@ -312,7 +317,7 @@ Follow the instructions under the heading
         * IP: 0.0.0.0
         * PORT:	80
 4. Download the code from the Github repository [here](https://github.com/AnthonyNicklin/meat-free).
-5. Click on Clone or download then Download ZIP. This will download the code into a ZIP folder locally on your computer.
+5. Click on _Clone_ or _download then Download ZIP_. This will download the code into a ZIP folder locally on your computer.
 6. Uncompress the ZIP folder.
 7. Open up a terminal or cmd prompt and login into Heroku CLI.
     * ````heroku login````
@@ -338,21 +343,21 @@ dashboard.
 
 The database used for this application is MongoDB and a free account can be created [here](https://www.mongodb.com/new).
 
-1. Click on Try Free top right
+1. Click on _Try Free_ top right
 2. In the right hand panel complete the fields and complete verification steps required
-3. Click on Build a New Cluster.
-    * Select your preferred Cloud provider (I go with AWS).
+3. Click on _Build a New Cluster_.
+    * Select your preferred Cloud provider.
     * Select the region you wish to host and be sure to check the region is in the free tier.  
     * Select a Cluster Tier. Again be careful to select a free one if you wish to host this for free.
     * Select any additional settings you wish to set.
     * Give the Cluster a name.
-    * Check settings then once happy select Create Cluster.
-4. Click on Collections > Create Database.
+    * Check settings then once happy select _Create Cluster_.
+4. Click on _Collections_ > _Create Database_.
     * Give it a name (remember this as you will need the database name for import settings when deploying the code).
-5. Click on Create Collection.  
+5. Click on _Create Collection_.  
     * Create one with a name of ‘recipes’ and another with a name of ‘user_accounts’.
-6. Click on the Overview tab then Connect.
-    * Click on Connect Your Application
+6. Click on the _Overview_ tab then _Connect_.
+    * Click on _Connect Your Application_.
     * Select the correct drive and version.
     * Copy and past the Connection String and keep this safe as you will need it for your MONGO_URI variable to deploy 
     the code.
@@ -375,7 +380,7 @@ below.
 * [Garlic](https://pixabay.com/vectors/garlic-cloves-vegetable-organic-25382/)
 * [Landing Image](https://pixabay.com/photos/casserole-dish-vegetable-tomato-2776735/)
 
-##### Favicon
+#### Favicon
 
 I used a Favicon and App Icon Generator online to create the Favicon for this web application. The web site I used was
 [Favicon.ico & App Icon Generator](https://www.favicon-generator.org).
